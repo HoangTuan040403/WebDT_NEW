@@ -88,14 +88,14 @@
                 @foreach (var item in Model.Items)
 
                 {
-                    double total = item._shopping_quantity * (double)item._shopping_product.GiaSP.Value;
-                    int gia = item._shopping_product.GiaSP.Value;
+                    double total = item._shopping_quantity * (double)item._shopping_product.GiaSp.Value;
+                    int gia = item._shopping_product.GiaSp.Value;
                     <tr>    
                         <td>
                             @Html.DisplayFor(model => item._shopping_product.TenSP)
                         </td>
                         <td>
-                            <img src="~/Content/images/@item._shopping_product.HinhSP" height="60" width="60" />
+                            <img src="~/Content/images/@item._shopping_product.Hinh1" height="60" width="60" />
                         </td>
                         <td>
                             @*@Html.DisplayFor(model => item._shopping_product.GiaSP)*@
@@ -134,27 +134,38 @@
                     <td colspan="6">
                         <br />
                         @*<h4 class="headerTextOfQuanLy" style="margin: 0px;">THANH TOÁN</h4>*@
-                        <div class="submit-thanhtoan">
-                            @using (Html.BeginForm("CheckOut", "XemDonHang", FormMethod.Post))
-                            {
-                                <table style="border-collapse:separate; border-spacing:5px;">
-                                    <tr>
-                                        <td colspan="2">
-                                            Nhập mã Nhân viên:
-                                        </td>
-                                        <td>
-                                            <input type="hidden" name="TongTien" value="@Model.Total_money()" />
-                                        </td>
-                                        <td>
-                                            <input style="width: 200px" type="number" name="NguoiBan" value="@Session["MaNguoiBan"]" required" />
-                                        </td>
-                                        <td colspan="2">
-                                            <input style="width: 200px; background-color: #424242;" type="submit" value="Thanh toán" class="btn btn-dark" />
-                                        </td>
-                                    </tr>
-                                </table>
-                            }
-                        </div>
+                    <div class="submit-thanhtoan">
+                        @using (Html.BeginForm("CheckOut", "XemDonHang", FormMethod.Post))
+                        {
+                            <table style="border-collapse:separate; border-spacing:5px;">
+                                <tr>
+                                    <td>Số điện thoại:</td>
+                                    <td><input style="width: 200px" type="text" name="SDT" required" value="@Session["SDT"]" /></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Tên người nhận:
+                                    </td>
+                                    <td>
+                                        <input style="width: 200px" type="text" name="TenNgNhan" required" value="@Session["TenNgNhan"]" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Địa chỉ nhận:</td>
+                                    <td><input style="width: 200px" type="text" name="DCNhan" required" value="@Session["DCNhan"]" /></td>
+                                </tr>
+
+
+                                <tr>
+                                    <td>
+                                        <input style="width: 200px; background-color: #424242;" type="submit" value="Thanh toán" class="btn btn-dark" />
+
+                                        @*<a href="/XemDonHang/Order/" class="btn-default">Thêm vào giỏ hàng</a>*@
+                                    </td>
+                                </tr>
+                            </table>
+                        }
+                    </div>
 
                     </td>
 
