@@ -55,22 +55,22 @@
             </td>
             <td>
                 @*@Html.DisplayFor(modelItem => item.HinhSP)*@
-                <img src="~/Content/images/@item.HinhSP" width="60" />
+                <img src="~/Content/images/@item.Hinh1" width="60" />
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.MoTaSP)
+                @Html.DisplayFor(modelItem => item.Mota)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.GiaSP)
+                @Html.DisplayFor(modelItem => item.GiaSp)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.SoLuongSP)
+                @Html.DisplayFor(modelItem => item.SoLuong)
             </td>
-            <td>
+            @*<td>
                 @Html.DisplayFor(modelItem => item.MaNSX)
-            </td>
+            </td>*@
             <td>
-                @Html.DisplayFor(modelItem => item.LoaiSP.TenLoai)
+                @Html.DisplayFor(modelItem => item.PhanLoai.Tenloai)
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.MaSP }) |

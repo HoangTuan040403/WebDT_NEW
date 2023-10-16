@@ -14,12 +14,12 @@ namespace DoAnQuanLyTapHoa.Controllers
 {
     public class SanPhamsController : Controller
     {
-        public QuanLyTapHoaFinalEntities1 db = new QuanLyTapHoaFinalEntities1();
+        public QLBANDTEntities db = new QLBANDTEntities();
 
         // GET: SanPhams
         public ActionResult Index()
         {
-            var sanPhams = db.SanPham.Include(s => s.LoaiSP);
+            var sanPhams = db.SanPhams.Include(s => s.PhanLoai);
             return View(sanPhams.ToList());
         }
 
@@ -30,7 +30,7 @@ namespace DoAnQuanLyTapHoa.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            SanPham sanPham = db.SanPham.Find(id);
+            SanPham sanPham = db.SanPhams.Find(id);
             if (sanPham == null)
             {
                 return HttpNotFound();
@@ -41,7 +41,7 @@ namespace DoAnQuanLyTapHoa.Controllers
         // GET: SanPhams/Create
         public ActionResult Create()
         {
-            ViewBag.MaLoai = new SelectList(db.LoaiSP, "MaLoai", "TenLoai");
+            ViewBag.MaLoai = new SelectList(db.PhanLoais, "MaLoai", "TenLoai");
             return View();
         }
 
@@ -63,17 +63,17 @@ namespace DoAnQuanLyTapHoa.Controllers
                     //Tạo đường dẫn tới file
                     var path = Path.Combine(Server.MapPath("~/Images"), fileName);
                     //Lưu tên
-                    sanPham.HinhSP = fileName;
+                    sanPham.Hinh1 = fileName;
                     //Save vào Images Folder
                     HinhSP.SaveAs(path);
                 }
 
-                db.SanPham.Add(sanPham);
+                db.SanPhams.Add(sanPham);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.MaLoai = new SelectList(db.LoaiSP, "MaLoai", "TenLoai", sanPham.MaLoai);
+            ViewBag.MaLoai = new SelectList(db.PhanLoais, "MaLoai", "TenLoai", sanPham.MaLoai);
             return View(sanPham);
         }
 
@@ -84,12 +84,12 @@ namespace DoAnQuanLyTapHoa.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            SanPham sanPham = db.SanPham.Find(id);
+            SanPham sanPham = db.SanPhams.Find(id);
             if (sanPham == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.MaLoai = new SelectList(db.LoaiSP, "MaLoai", "TenLoai", sanPham.MaLoai);
+            ViewBag.MaLoai = new SelectList(db.PhanLoais, "MaLoai", "TenLoai", sanPham.MaLoai);
             return View(sanPham);
         }
 
@@ -106,7 +106,7 @@ namespace DoAnQuanLyTapHoa.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.MaLoai = new SelectList(db.LoaiSP, "MaLoai", "TenLoai", sanPham.MaLoai);
+            ViewBag.MaLoai = new SelectList(db.PhanLoais, "MaLoai", "TenLoai", sanPham.MaLoai);
             return View(sanPham);
         }
 
@@ -117,7 +117,7 @@ namespace DoAnQuanLyTapHoa.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            SanPham sanPham = db.SanPham.Find(id);
+            SanPham sanPham = db.SanPhams.Find(id);
             if (sanPham == null)
             {
                 return HttpNotFound();
@@ -130,8 +130,8 @@ namespace DoAnQuanLyTapHoa.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
-            SanPham sanPham = db.SanPham.Find(id);
-            db.SanPham.Remove(sanPham);
+            SanPham sanPham = db.SanPhams.Find(id);
+            db.SanPhams.Remove(sanPham);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -141,7 +141,7 @@ namespace DoAnQuanLyTapHoa.Controllers
         public ActionResult ProductList(String searchString)
         {
             // Tạo Products và có tham chiếu đến Loại sản phẩm:
-            var products = db.SanPham.Include(p => p.LoaiSP);
+            var products = db.SanPhams.Include(p => p.PhanLoai);
 
             //Tìm kiếm chuỗi truy vấn theo tên sản phẩm, nếu chuỗi truy vấn SearchString khác rỗng, null
             if(!String.IsNullOrEmpty(searchString))

@@ -157,6 +157,12 @@
     <Compile Include="Models\Mau.cs">
       <DependentUpon>QLBANDTEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Order.cs">
+      <DependentUpon>QLBANDTEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OrdersDetail.cs">
+      <DependentUpon>QLBANDTEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\PhanLoai.cs">
       <DependentUpon>QLBANDTEntities.tt</DependentUpon>
     </Compile>
@@ -328,11 +334,6 @@
     <Content Include="Views\SanPhams\Details.cshtml" />
     <Content Include="Views\SanPhams\Edit.cshtml" />
     <Content Include="Views\SanPhams\Index.cshtml" />
-    <Content Include="Views\NhaCungCaps\Create.cshtml" />
-    <Content Include="Views\NhaCungCaps\Delete.cshtml" />
-    <Content Include="Views\NhaCungCaps\Details.cshtml" />
-    <Content Include="Views\NhaCungCaps\Edit.cshtml" />
-    <Content Include="Views\NhaCungCaps\Index.cshtml" />
     <Content Include="Views\NhapHangs\Create.cshtml" />
     <Content Include="Views\NhapHangs\Delete.cshtml" />
     <Content Include="Views\NhapHangs\Details.cshtml" />

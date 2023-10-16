@@ -184,11 +184,11 @@
     <div class="row">
         @foreach (var item in Model)
         {
-            decimal price = (decimal)item.GiaSP;
+            decimal price = (decimal)item.GiaSp;
             <div class="col-sm-12 col-sm-6 col-md-3 col-lg-3">
                 <div class="card-pro">
                     <a href="@Url.Action("Details", "SanPhams", new { id = item.MaSP })">
-                        <img class="card-pro-img" src="~/Content/images/@item.HinhSP" />
+                        <img class="card-pro-img" src="~/Content/images/@item.Hinh1" />
                     </a>
                     <p class="card-pro-name">@Html.DisplayFor(model => item.TenSP)</p>
                     <p class="card-pro-price">@price.ToString("#,##0").Replace(',', '.') &#8363 </p>
@@ -231,11 +231,11 @@
     <div class="row">
         @foreach (var item in Model.Take(4))
         {
-            decimal price = (decimal)item.GiaSP;
+            decimal price = (decimal)item.GiaSp;
             <div class="col-sm-12 col-sm-6 col-md-3 col-lg-3">
                 <div class="card-pro card-flashsale">
                     <a href="@Url.Action("Details", "SanPhams", new { id = item.MaSP })">
-                        <img class="card-flashsale-pro-img" src="~/Content/images/@item.HinhSP" />
+                        <img class="card-flashsale-pro-img" src="~/Content/images/@item.Hinh1" />
                     </a>
                     <p class="card-flashsale-pro-name">@Html.DisplayFor(model => item.TenSP)</p>
                     <p class="card-flashsale-pro-price">@price.ToString("###.#00" + "đ")</p>

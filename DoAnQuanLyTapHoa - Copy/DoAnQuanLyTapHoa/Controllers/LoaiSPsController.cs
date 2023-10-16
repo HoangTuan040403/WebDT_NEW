@@ -12,12 +12,12 @@ namespace DoAnQuanLyTapHoa.Controllers
 {
     public class LoaiSPsController : Controller
     {
-        private QuanLyTapHoaFinalEntities1 db = new QuanLyTapHoaFinalEntities1();
+        private QLBANDTEntities db = new QLBANDTEntities();
 
         // GET: LoaiSPs
         public ActionResult Index()
         {
-            return View(db.LoaiSP.ToList());
+            return View(db.PhanLoais.ToList());
         }
 
         // GET: LoaiSPs/Details/
@@ -27,7 +27,7 @@ namespace DoAnQuanLyTapHoa.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }            
-            LoaiSP loaiSP = db.LoaiSP.Find(id);
+            PhanLoai loaiSP = db.PhanLoais.Find(id);
             if (loaiSP == null)
             {
                 return HttpNotFound();
@@ -46,11 +46,11 @@ namespace DoAnQuanLyTapHoa.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MaLoai,TenLoai")] LoaiSP loaiSP)
+        public ActionResult Create([Bind(Include = "MaLoai,TenLoai")] PhanLoai loaiSP)
         {
             if (ModelState.IsValid)
             {                              
-                db.LoaiSP.Add(loaiSP);
+                db.PhanLoais.Add(loaiSP);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -66,7 +66,7 @@ namespace DoAnQuanLyTapHoa.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            LoaiSP loaiSP = db.LoaiSP.Find(id);
+            PhanLoai loaiSP = db.PhanLoais.Find(id);
             if (loaiSP == null)
             {
                 return HttpNotFound();
@@ -79,7 +79,7 @@ namespace DoAnQuanLyTapHoa.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MaLoai,TenLoai")] LoaiSP loaiSP)
+        public ActionResult Edit([Bind(Include = "MaLoai,TenLoai")] PhanLoai loaiSP)
         {
             if (ModelState.IsValid)
             {
@@ -97,7 +97,7 @@ namespace DoAnQuanLyTapHoa.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            LoaiSP loaiSP = db.LoaiSP.Find(id);
+            PhanLoai loaiSP = db.PhanLoais.Find(id);
             if (loaiSP == null)
             {
                 return HttpNotFound();
@@ -110,8 +110,8 @@ namespace DoAnQuanLyTapHoa.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
-            LoaiSP loaiSP = db.LoaiSP.Find(id);
-            db.LoaiSP.Remove(loaiSP);
+            PhanLoai loaiSP = db.PhanLoais.Find(id);
+            db.PhanLoais.Remove(loaiSP);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

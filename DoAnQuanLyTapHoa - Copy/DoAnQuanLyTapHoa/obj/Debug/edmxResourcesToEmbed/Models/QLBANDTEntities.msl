@@ -24,6 +24,28 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="QLBANDTModel.Order">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="MaOr" ColumnName="MaOr" />
+          <ScalarProperty Name="DateOr" ColumnName="DateOr" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="TenNgNhan" ColumnName="TenNgNhan" />
+          <ScalarProperty Name="DiaChiNhan" ColumnName="DiaChiNhan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrdersDetails">
+      <EntityTypeMapping TypeName="QLBANDTModel.OrdersDetail">
+        <MappingFragment StoreEntitySet="OrdersDetail">
+          <ScalarProperty Name="MaOrD" ColumnName="MaOrD" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="ThanhTien" ColumnName="ThanhTien" />
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+          <ScalarProperty Name="MaOr" ColumnName="MaOr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="PhanLoais">
       <EntityTypeMapping TypeName="QLBANDTModel.PhanLoai">
         <MappingFragment StoreEntitySet="PhanLoai">
