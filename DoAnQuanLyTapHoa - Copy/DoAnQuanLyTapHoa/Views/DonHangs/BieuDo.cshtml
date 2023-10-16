@@ -1,0 +1,46 @@
+﻿@model DoAnQuanLyTapHoa.Models.ChartData
+
+@{
+    ViewBag.Title = "BieuDo";
+    Layout = "~/Views/Shared/MasterLayout.cshtml";
+}
+<h2 class="headerTextOfQuanLy">Biểu Đồ thống kê doanh thu bán hàng</h2>
+<div>
+    <canvas id="myChart" width="400" height="200"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    // Lấy dữ liệu biểu đồ từ ViewBag và chuyển thành mảng JavaScript
+    var chartData = @Html.Raw(Json.Encode(ViewBag.ChartData));
+
+    // Chuẩn bị dữ liệu cho biểu đồ
+    var labels = chartData.map(data => data.Label);
+    var values = chartData.map(data => data.Value);
+
+    // Hiển thị biểu đồ
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Doanh số bán hàng',
+                data: values,
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 3
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
+
+

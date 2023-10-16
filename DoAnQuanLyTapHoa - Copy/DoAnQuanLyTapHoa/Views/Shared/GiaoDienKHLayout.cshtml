@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <!-- bootstrap  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+            crossorigin="anonymous"></script>
+
+    <!-- font awsome -->
+    <script src="https://kit.fontawesome.com/383abdf887.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    @*css*@
+    <link href="@Url.Content("~/Content/GiaodienKH.css")" rel="stylesheet" type="text/css" />
+
+
+    <!-- gg font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/5ea815c1d0.js"></script>
+</head>
+<body>
+
+    @* PHẦN HEADER  *@
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="nav-around container-fluid">
+                <!-- nav brand -->
+                <a class="navbar-brand" href="@Url.Action("ProductList", "SanPhams")">
+                    <img style="width: 100px; height: 80px;" src="~/Content/images/logotiemtaphoa.png" alt="Alternate Text" />
+                </a>
+
+                <!-- nav main -->
+                <div class="nav-main">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a aria-current="page" href="@Url.Action("ProductList", "SanPhams")">Tạp hóa</a>
+                            <i class="fa-solid fa-chevron-down fa-fade" style="color: #1f5151;"></i>
+                        </li>
+
+                        <li class="nav-item">
+                            <a aria-current="page" href="@Url.Action("ProductList", "SanPhams")">Sản phẩm</a>
+                            <i class="fa-solid fa-chevron-down fa-fade" style="color: #1f5151;"></i>
+                        </li>
+
+                        <li class="nav-item">
+                            <a aria-current="page" href="#">Giới thiệu</a>
+                            <i class="fa-solid fa-chevron-down fa-fade" style="color: #1f5151;"></i>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- nav end -->
+                <div class="nav-end">
+                    @using (Html.BeginForm("ProductList", "SanPhams", FormMethod.Get))
+                    {
+                        <div class="search">
+                            <div>
+                                <input type="text" placeholder="Search . . ." name="SearchString" required>
+                                @*<input type="submit" value="Tìm kiếm" class="btn btn-warning" />*@
+                            </div>
+                        </div>
+                    }
+                    
+                    <div class="dropdown">
+                        @*<i style="color: #ffffff;" class="nav-icon fa-solid fa-bars fa-flip fa-lg" data-bs-toggle="dropdown" aria-expanded="false"></i>*@
+                        <i class="fa-solid fa-user fa-bounce fa-2xl" style="margin-left: 35px; color: #424242" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Đổi mật khẩu</a></li>
+                            <li><a class="dropdown-item" href="#">Thông tin Cửa hàng</a></li>
+                            <li><a class="dropdown-item" href="@Url.Action("Logout", "Login")">Đăng Xuất</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    @* PHẦN BODY CHỨA NỘI DUNG SẢN PHẨM *@
+    <div>
+        @RenderBody()
+    </div>   
+
+    @* PHẦN FOOTER  *@
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-6 footer-item">
+                    <h4>company</h4>
+                    <ul>
+                        <li><a href="#">about us</a></li>
+                        <li><a href="#">our services</a></li>
+                        <li><a href="#">privacy policy</a></li>
+                        <li><a href="#">affiliate program</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 footer-item">
+                    <h4>get help</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">shipping</a></li>
+                        <li><a href="#">returns</a></li>
+                        <li><a href="#">order status</a></li>
+                        <li><a href="#">payment options</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 footer-item">
+                    <h4>online shop</h4>
+                    <ul>
+                        <li><a href="#">watch</a></li>
+                        <li><a href="#">bag</a></li>
+                        <li><a href="#">shoes</a></li>
+                        <li><a href="#">dress</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 footer-item">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="all-right-reserved">&copy;2021 Tiệm tạp hóa | All Rights Reserved</p>
+    </footer>
+</body>
+</html>

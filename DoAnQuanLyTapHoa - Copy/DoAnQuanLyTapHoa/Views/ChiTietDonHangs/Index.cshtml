@@ -1,0 +1,59 @@
+﻿@model IEnumerable<DoAnQuanLyTapHoa.Models.ChiTietDonHang>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/MasterLayout.cshtml";
+}
+
+<h2 class="headerTextOfQuanLy">Danh sách Chi tiết Đơn Hàng</h2>
+
+<p class="createNew">
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SanPham.TenSP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DonGia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoLuong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TongTienSP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DonHang.MaDH)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.SanPham.TenSP)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DonGia)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SoLuong)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TongTienSP)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DonHang.MaDH)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.MaCTDH }) |
+        @Html.ActionLink("Details", "Details", new { id = item.MaCTDH }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.MaCTDH })
+    </td>
+</tr>
+}
+
+</table>

@@ -1,0 +1,55 @@
+﻿@model DoAnQuanLyTapHoa.Models.UserID
+
+@{
+    
+    ViewBag.Title = "RegisterUser";
+    <link href="~/Content/dn.css" rel="stylesheet" />
+}
+
+    <!DOCTYPE html>
+
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>RegisterUser</title>
+    </head>
+    <body>
+        @using (Html.BeginForm("RegisterUser", "Login", FormMethod.Post))
+        {
+            <div class="wapper">
+                <table>
+                    <tr>
+                        <th>Nhập số điện thoại</th>
+                        <td>@Html.TextBoxFor(m => m.MaUser)</td>
+                    </tr>
+                    <tr>
+                        <th>@Html.LabelFor(m => m.TenUser)</th>
+                        <td>@Html.TextBoxFor(m => m.TenUser)</td>
+
+                    </tr>
+
+                    <tr>
+                        <th>@Html.LabelFor(m => m.Password)</th>
+                        <td>@Html.PasswordFor(m => m.Password)</td>
+
+                        @if (ViewBag.ErrorRegister != null)
+                        {
+                            <span style="color:red"> @ViewBag.ErrorRegister</span>
+                        }
+                    </tr>
+
+                    @*<tr>
+                        <th>@Html.LabelFor(m => m.ConfrimPass)</th>
+                        <td>@Html.TextBoxFor(m => m.ConfrimPass)</td>
+
+                    </tr>*@
+
+                    <tr colspan="2">
+                        <td><input type="submit" value="Đăng Ký Tài Khoản" /></td>
+                    </tr>
+                </table>
+            </div>
+        }
+
+    </body>
+</html>

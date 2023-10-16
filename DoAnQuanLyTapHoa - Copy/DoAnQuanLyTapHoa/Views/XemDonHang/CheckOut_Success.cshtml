@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "CheckOut_Success";
+    Layout = "~/Views/Shared/GiaoDienKHLayout.cshtml";
+}
+
+<style>
+    .check-out {
+        width: 500px;
+        height: 400px;
+        margin: 50px auto 0px;        
+    }
+</style>
+<div class="check-out">    
+    <h1 class="headerTextOfQuanLy">Thanh toán thành công</h1>
+    <a href="@Url.Action("ProductList", "SanPhams")">
+        <img src="~/Content/images/thanhtoanthanhcong.png" alt="Alternate Text" style="width: 200px; height: 200px; margin: 0 auto;" />
+    </a>
+    
+</div>
+
+
+
+

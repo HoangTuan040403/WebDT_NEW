@@ -1,0 +1,58 @@
+﻿@model  IEnumerable<DoAnQuanLyTapHoa.Models.DonHang>
+
+@{
+    ViewBag.Title = "ThongKeDoanhThu";
+    Layout = "~/Views/Shared/MasterLayout.cshtml";
+}
+
+@* THƯ VIỆN CHART.JS ĐỂ CHÈN BIỂU ĐỒ *@
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<h2 class="headerTextOfQuanLy">Thống kê Doanh Thu theo ngày</h2>
+
+@*<div class="row">
+        <div class="col-6">
+            <p>Ht</p>
+            <p>@Html.DisplayFor(model => item.NgayMua)</p>
+        </div>
+        <div class="col-6">
+            <p>@Html.DisplayFor(model => item.TongTien)</p>
+        </div>
+    </div>*@
+
+<div class="container">
+    <div class="row">
+        <table>
+            <tr class="col-6">
+                <td colspan="2">
+                    <p style="font-size: 1rem; font-weight: 800">Ngày mua</p>
+                </td>
+                <td></td>
+                <td colspan="2" style="margin-left: 200px;">
+                    <p style="font-size: 1rem; font-weight: 800">Tổng tiền</p>
+                </td>
+                <td></td>
+            </tr>
+            
+
+            @foreach (var item in Model)
+            {
+                double tongtien = item.TongTien.Value;
+                <tr style="border-bottom-width: 0.5px;">
+                    <td colspan="2">
+                        @Html.DisplayFor(model => item.NgayMua)
+                    </td>
+                    <td></td>
+                    <td colspan="2">
+                        @*@Html.DisplayFor(model => item.TongTien)*@
+                        @tongtien.ToString("#,##0").Replace(',', '.') &#8363
+                    </td>
+                    <td></td>
+                </tr>                
+            }
+        </table>
+    </div>
+    
+</div>
+
+

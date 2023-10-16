@@ -1,0 +1,47 @@
+﻿@model DoAnQuanLyTapHoa.Models.UserID
+
+@{
+    ViewBag.Title = "Index";
+    <link href="~/Content/dn.css" rel="stylesheet" />
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    @using (Html.BeginForm("LoginAu", "Login", FormMethod.Post))
+    {<div class="wapper">
+            <form method="post" role="form" action="~/Controllers/LoginController">
+                <div id="from_login" ac>
+                    <h1 class="from_heading">Đăng nhập </h1>
+
+                    <div class="from_group">
+
+                        <div class="from_input">
+                            <div>nhập số điện thoại</div>
+                            <div>@Html.TextBoxFor(m => m.MaUser)</div>
+
+                        </div>
+                    </div>
+
+                    <div class="from_group">
+
+                        <div class="from_input">
+                            <div>nhập mật khẩu</div>
+                            @Html.PasswordFor(m => m.Password)
+
+                        </div>
+                    </div>
+                    <input type="submit" value="Đăng nhập" class="from_submit">
+                    <div style="align-items:center"> <a href="~/Login/RegisterUser">Bạn chưa có tài khoản ?  </a></div>
+                </div>
+
+            </form>
+        </div>
+    }
+</body>
+</html>

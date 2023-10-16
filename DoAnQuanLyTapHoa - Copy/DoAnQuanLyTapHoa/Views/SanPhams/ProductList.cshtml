@@ -1,0 +1,247 @@
+﻿@*@model DoAnQuanLyTapHoa.Models.SanPham*@
+@model IEnumerable<DoAnQuanLyTapHoa.Models.SanPham>
+
+@{  
+    ViewBag.Title = "ProductList";
+    Layout = "~/Views/Shared/GiaoDienKHLayout.cshtml";
+}
+
+@* font awsome *@
+<script src="https://kit.fontawesome.com/383abdf887.js" crossorigin="anonymous"></script>
+
+<style>
+    .headerOfProductList {
+        padding: 0 50px;
+        display: flex;
+    }
+
+    .linestraight {     
+        margin-right: 15px;
+        height: 50px;
+        border: 3px solid red;
+    }
+
+    hr {
+        width: 1400px;
+        border: 2px solid;
+        padding: 0 50px;
+        margin: 0 auto;
+    }
+
+
+    /*-------------------------------CSS PHAN SLIDER -----------------------------------------------*/
+    .slider {
+        margin-bottom: 20px;
+    }
+
+    .card-pro-img {
+        width: 100%;
+        height: 280px;
+    }
+
+    .card-pro-name, .card-pro-price {
+        font-size: 1.25rem;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    /*----------------css rating ngôi sao --------------*/
+    .star-wrapper {
+        text-align: center;
+    }
+
+        .star-wrapper i {
+            font-size: 1em;
+            color: #F2BE22;
+            text-decoration: none;
+            transition: all 0.5s;
+        }
+
+            .star-wrapper i:hover {
+                color: gold;
+                transform: scale(1.3);
+            }
+
+
+    /* css nút mua hàng */
+    .btn-mua-hang {
+        background: radial-gradient(#c31432, #240b36);
+        border-radius: 999px;
+        box-shadow: #5E5DF0 0 10px 20px -10px;
+        box-sizing: border-box;
+        cursor: pointer;
+        font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+        font-size: 1.0rem;
+        font-weight: 600;
+        line-height: 24px;
+        opacity: 1;
+        outline: 0 solid transparent;
+        padding: 8px 18px;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        margin: 10px 0px 0px 20%;
+        /*width: fit-content;*/
+        word-break: break-word;
+        border: 0;
+    }
+
+        .btn-mua-hang > a{
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+    /* ------------------- css banner -----------------*/
+    .banner-product {
+        width: 1300px;
+        margin: 20px auto;
+    }
+
+    /* -------------------css flash sale sản phẩm ---------------*/
+    .flash-sale-header {
+        margin: 10px 0;
+    }
+
+    .flash-sale-hr {
+        width: 1000px;
+        margin: 10px auto;
+        border: 2px solid #ffffff;
+        opacity: 100%;
+    }
+
+    .flash-sale {
+        width: 100%;
+        height: 450px;
+        background-color: #ED2B2A;
+        border: 1px solid #000000;
+    }
+
+    .card-flashsale {
+        background-color: #ffffff;
+        height: 100%;
+    }
+   
+    .card-flashsale-pro-img{
+        width: 280px;
+        height: 280px;
+    }
+
+    .card-flashsale-pro-img:hover {
+        box-sizing: border-box;
+        box-shadow: 5px 5px 10px 5px #888888;
+        transform: scale(1.01, 1.01);
+    }
+
+    .card-flashsale-pro-name {
+        text-transform: uppercase;
+        font-size: 1.25rem;
+        font-weight: bold;
+    }
+
+    .card-flashsale-pro-price {
+        color: red;
+        font-size: 1.1rem;
+        font-weight: bold;
+    }
+</style>
+
+@* PHẦN SLIDER *@
+<div class="slider">
+    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="500">
+                <img height="500" src="~/Content/images/slider1.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" data-bs-interval="500">
+                <img height="500" src="~/Content/images/slider3.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" data-bs-interval="500">
+                <img height="500" src="~/Content/images/slider2.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" data-bs-interval="500">
+                <img height="500" src="~/Content/images/slider3.png" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+
+<div class="headerOfProductList">
+    <div class="linestraight"></div>
+    <h2>Tiệm Tạp Hóa </h2>
+</div>
+
+<hr />
+
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            decimal price = (decimal)item.GiaSP;
+            <div class="col-sm-12 col-sm-6 col-md-3 col-lg-3">
+                <div class="card-pro">
+                    <a href="@Url.Action("Details", "SanPhams", new { id = item.MaSP })">
+                        <img class="card-pro-img" src="~/Content/images/@item.HinhSP" />
+                    </a>
+                    <p class="card-pro-name">@Html.DisplayFor(model => item.TenSP)</p>
+                    <p class="card-pro-price">@price.ToString("#,##0").Replace(',', '.') &#8363 </p>
+                    <div class="star-wrapper">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    @* nút mua hàng nè   *@
+                    <button class="btn-mua-hang" role="button"> 
+                        <a href="/XemDonHang/TaoDonHang/@item.MaSP " class="btn-default">Thêm vào đơn hàng</a>
+                    </button>
+
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@* PHẦN BANNER QUẢNG CÁO *@
+<div class="banner-product">
+    <a href="@Url.Action("ProductList", "SanPhams")">
+        <picture>
+            <source media="(max-width: 767px)" srcset="//theme.hstatic.net/1000288770/1000794542/14/3_banner_htp_1_large.jpg?v=76">
+            <img src="~/Content/images/banner2.jpg" alt="banner" width="100%" loading="lazy" />
+        </picture>
+    </a>
+</div>
+
+
+@* PHẦN FLASH SALE *@
+<div class="flash-sale container text-center">
+    <div class="flash-sale-header">
+        <img src="//theme.hstatic.net/1000288770/1000794542/14/img_home_featured_title.png?v=76" loading="lazy" width="245" height="50">
+    </div>
+
+    <hr class="flash-sale-hr" />
+    <div class="row">
+        @foreach (var item in Model.Take(4))
+        {
+            decimal price = (decimal)item.GiaSP;
+            <div class="col-sm-12 col-sm-6 col-md-3 col-lg-3">
+                <div class="card-pro card-flashsale">
+                    <a href="@Url.Action("Details", "SanPhams", new { id = item.MaSP })">
+                        <img class="card-flashsale-pro-img" src="~/Content/images/@item.HinhSP" />
+                    </a>
+                    <p class="card-flashsale-pro-name">@Html.DisplayFor(model => item.TenSP)</p>
+                    <p class="card-flashsale-pro-price">@price.ToString("###.#00" + "đ")</p>
+                </div>
+            </div>
+        }
+    </div>
+    <hr class="flash-sale-hr" />
+</div>

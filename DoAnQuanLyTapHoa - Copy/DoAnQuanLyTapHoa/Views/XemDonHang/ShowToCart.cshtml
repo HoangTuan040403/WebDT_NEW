@@ -1,0 +1,174 @@
+﻿@model DoAnQuanLyTapHoa.Models.Cart
+
+@{
+    ViewBag.Title = "ShowToCart";
+    Layout = "~/Views/Shared/GiaoDienKHLayout.cshtml";
+}
+
+@* google font  *@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@300&display=swap" rel="stylesheet">
+
+@* font awsome *@
+<script src="https://kit.fontawesome.com/383abdf887.js" crossorigin="anonymous"></script>
+
+<style>
+
+    /* phần giỏ hàng */
+    .giohang {
+        font-family: 'Rowdies', cursive;
+        font-weight: 400;
+        height: 600px;
+        background-color: #FF9A8B;
+        background-image: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
+        padding: 1rem;
+        color: cornsilk;
+    }
+    /*CSS CỦA CÁC TRANG QUẢN LÝ ĐẦU MỤC*/
+    .headerOfQuanLy {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .headerTextOfQuanLy {
+        letter-spacing: 2px;
+        margin-top: 50px;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .createNew {
+        /*font-weight: bold;*/
+        display: block;
+        width: 200px;
+        font-size: 1.2rem;
+        text-decoration: none;
+        color: #ffffff;
+        /*background: radial-gradient(#c31432, #240b36);*/
+        background-color: #424242;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 20px auto;
+    }
+
+    /* css phần thanh toán thông tin đơn hàng nè */
+    .thanhtoan {
+        /*background-color: #3EECAC;
+        background-image: linear-gradient(19deg, #3EECAC 0%, #EE74E1 100%);*/
+    }
+
+    .submit-thanhtoan {
+        width: 600px;
+        margin: 0 auto;
+    }
+</style>
+
+
+
+<div class="giohang container">
+    <h2 class="headerTextOfQuanLy">Màn Hình Tính Tiền</h2>
+    <a class="createNew" href="@Url.Action("ProductList","SanPhams")">Thêm sản phẩm</a>
+
+    @if (Model != null)
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Tên sản phẩm</th>
+                    <th>Hình sản phẩm</th>
+                    <th>Giá</th>
+                    <th>Số lượng</th>
+                    <th>Thành tiền</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Items)
+
+                {
+                    double total = item._shopping_quantity * (double)item._shopping_product.GiaSP.Value;
+                    int gia = item._shopping_product.GiaSP.Value;
+                    <tr>    
+                        <td>
+                            @Html.DisplayFor(model => item._shopping_product.TenSP)
+                        </td>
+                        <td>
+                            <img src="~/Content/images/@item._shopping_product.HinhSP" height="60" width="60" />
+                        </td>
+                        <td>
+                            @*@Html.DisplayFor(model => item._shopping_product.GiaSP)*@
+                            @gia.ToString("#,##0").Replace(',', '.')&#8363
+                        </td>
+                        <td>
+                            @using (Html.BeginForm("Upadate_Quantity_Cart", "XemDonHang"))
+                            {
+                                <input type="hidden" value="@item._shopping_product.MaSP" name="idPro" />
+                                <input type="number" value="@item._shopping_quantity" name="cartQuantity" />
+                                <input type="submit" value="Cập nhật" />
+                                @*@String.Format(@item._shopping_product.MaSP);*@
+                            }
+                        </td>
+                        <td>
+                            @total.ToString("#,##0").Replace(',', '.')&#8363                            
+                        </td>
+                        <td>
+                            <a href="/XemDonHang/RemoveCart/@item._shopping_product.MaSP">
+                                <i class="fa-solid fa-trash fa-beat fa-2xl" style="color: #195b6c;"></i>
+                            </a>
+                        </td>
+                    </tr>
+                }
+
+                @* hiển thị tổng tiền *@
+                <tr>                    
+                    <td colspan="6" style="text-align:right"> 
+                        Tổng tiền: @Model.Total_money().ToString("#,##0").Replace(',', '.') &#8363 
+                    </td>
+                </tr>
+
+            </tbody>
+            <tfoot class="thanhtoan">
+                <tr>
+                    <td colspan="6">
+                        <br />
+                        @*<h4 class="headerTextOfQuanLy" style="margin: 0px;">THANH TOÁN</h4>*@
+                        <div class="submit-thanhtoan">
+                            @using (Html.BeginForm("CheckOut", "XemDonHang", FormMethod.Post))
+                            {
+                                <table style="border-collapse:separate; border-spacing:5px;">
+                                    <tr>
+                                        <td colspan="2">
+                                            Nhập mã Nhân viên:
+                                        </td>
+                                        <td>
+                                            <input type="hidden" name="TongTien" value="@Model.Total_money()" />
+                                        </td>
+                                        <td>
+                                            <input style="width: 200px" type="number" name="NguoiBan" value="@Session["MaNguoiBan"]" required" />
+                                        </td>
+                                        <td colspan="2">
+                                            <input style="width: 200px; background-color: #424242;" type="submit" value="Thanh toán" class="btn btn-dark" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            }
+                        </div>
+
+                    </td>
+
+                </tr>
+            </tfoot>
+        </table>
+    }
+
+    else
+    {
+        <h3>Giỏ hàng rỗng ! xin mời tiếp tục mua hàng</h3>
+    }
+
+
+</div>
+
+

@@ -1,0 +1,52 @@
+﻿@model IEnumerable<DoAnQuanLyTapHoa.Models.NhaCungCap>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/MasterLayout.cshtml";
+}
+
+<div class="headerOfQuanLy">
+    <h2 class="headerTextOfQuanLy">Quản lý Nhà cung cấp</h2>
+
+    <p class="createNew">
+        @Html.ActionLink("Thêm Mới Nhà cung cấp", "Create", "NhaCungCaps", null, new { @class = "createNew btn btn-light" })
+    </p>
+</div>
+
+<table class="table">
+    <tr>
+        <th>
+            @*@Html.DisplayNameFor(model => model.TenNCC)*@
+            <p>Tên nhà cung cấp</p>
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.SoDienThoaiNCC)*@
+            <p>Số điện thoại</p>
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.DiaChi)*@
+            <p>Địa chỉ</p>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenNCC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoDienThoaiNCC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiaChi)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MaNCC }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MaNCC }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MaNCC })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,43 @@
+﻿@model DoAnQuanLyTapHoa.Models.UserID
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/MasterLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>UserID</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenUser)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenUser)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RoleUser)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoleUser)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaUser }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

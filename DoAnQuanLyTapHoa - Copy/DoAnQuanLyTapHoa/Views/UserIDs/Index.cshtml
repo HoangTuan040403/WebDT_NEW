@@ -1,0 +1,52 @@
+﻿@model IEnumerable<DoAnQuanLyTapHoa.Models.UserID>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/MasterLayout.cshtml";
+}
+
+<div class="headerOfQuanLy">
+    <h2 class="headerTextOfQuanLy">Quản lý Người dùng</h2>
+
+    <p class="createNew">
+        @Html.ActionLink("Thêm Mới", "Create", "UserIDs", null, new { @class = "createNew btn btn-light" })
+    </p>
+</div>
+
+<table class="table">
+    <tr>
+        <th><p>Tài khoản</p></th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenUser)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RoleUser)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.MaUser)</td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenUser)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RoleUser)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.MaUser }) |
+                @Html.ActionLink("Details", "Details", new { id = item.MaUser }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.MaUser })
+            </td>
+        </tr>
+    }
+
+</table>

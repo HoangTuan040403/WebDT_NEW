@@ -1,0 +1,60 @@
+﻿@model IEnumerable<DoAnQuanLyTapHoa.Models.NhapHang>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/MasterLayout.cshtml";
+}
+
+<div class="headerOfQuanLy">
+    <h2 class="headerTextOfQuanLy">Quản lý Nhập hàng</h2>
+
+    <p class="createNew">
+        @Html.ActionLink("Thêm Mới", "Create", "NhapHangs", null, new { @class = "createNew btn btn-light" })
+    </p>
+</div>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @*@Html.DisplayNameFor(model => model.NgayNhapSP)*@
+            <p>Ngày nhập sản phẩm</p>
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.SoLuongNhap)*@
+            <p>Số lượng</p>
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.NhaCungCap.TenNCC)*@
+            <p>Tên nhà cung cấp</p>
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.SanPham.TenSP)*@
+            <p>Tên sản phẩm</p>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayNhapSP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoLuongNhap)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NhaCungCap.TenNCC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SanPham.TenSP)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MaNhapHang }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MaNhapHang }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MaNhapHang })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <!-- bootstrap  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+            crossorigin="anonymous"></script>
+
+    <!-- font awsome -->
+    <script src="https://kit.fontawesome.com/383abdf887.js" crossorigin="anonymous"></script>
+
+    @*css*@
+    <link href="@Url.Content("~/Content/masterlayout.css")" rel="stylesheet" type="text/css" />
+
+
+    <!-- gg font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+    <!-- BEGIN HEADER  -->
+    <header>
+        <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
+            <div class="nav-around container-fluid">
+                <!-- nav brand -->
+                <a class="navbar-brand" href="@Url.Action("Index", "TrangChu")">
+                    <img style="width: 80px; height: 80px; border-radius: 50%;" src="~/Content/images/logobrand.jpg" alt="Alternate Text" />
+                </a>
+
+                <!-- nav main -->
+                <div class="nav-main">
+                    <ul class="navbar-nav">
+                        <li class="nav-item" style="position: relative; top: 20px;">
+                            <a class="navNameOfStore nav-sp nav-link active" aria-current="page" href="@Url.Action("Index", "TrangChu")">Quản lý Cửa Hàng Tạp Hóa</a>
+                        </li>
+                        <!-- <li class="nav-item" style=" position: relative; top: 30px;">
+                            <a class="nav-link active" aria-current="page" href="#">Quản lý Đơn hàng</a>
+                        </li> -->
+                        <li class="nav-item">
+                            <div id="cover">
+                                <form method="get" action="">
+                                    <div class="tb">
+                                        <div class="td">
+                                            <input style="border: none;" />
+                                        </div>
+                                        <div class="td" id="s-cover">
+                                            <button type="submit" style="border: none;">
+                                                <div id="s-circle"></div>
+                                                <span></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- nav end -->
+                <div class="nav-end">
+                    <a href="#"><i class="nav-icon fa-solid fa-user"></i></a>
+                    <div class="dropdown">
+                        <i style="color: #ffffff;" class="nav-icon fa-solid fa-bars fa-flip fa-lg" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Đổi mật khẩu</a></li>
+                            <li><a class="dropdown-item" href="#">Thông tin Cửa hàng</a></li>
+                            <li><a class="dropdown-item" href="@Url.Action("Logout", "Login")">Đăng Xuất</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    @* ----------------PHẦN NỘI DUNG CHÍNH NÈ ---------------- *@
+    <div class="container-fluid" style="margin: 20px 20px 0px">
+        <div class="row">
+            <!-- phần content sidebar -->
+            <div class="content-sidebar col-lg-2">
+                <ul style="margin-top: 30px; padding: 0;">
+                    <a class="content-sidebar-a" href="">Quản lý Nghiệp vụ</a>
+                    <li class="content-sidebar-item">
+                        <i class="fa-solid fa-gear" style="color: #ffffff;"></i>
+                        @Html.ActionLink("Quản lý Sản Phẩm", "Index", "SanPhams")
+                        <i class="fa-solid fa-angle-right" style="color: #ffffff; text-align: left;"></i>
+                    </li>
+                    <li class="content-sidebar-item">
+                        <i class="fa-solid fa-gear" style="color: #ffffff;"></i>
+                        @Html.ActionLink("Quản lý Loại Sản Phẩm", "Index", "LoaiSPs")
+                        <i class="fa-solid fa-angle-right" style="color: #ffffff; text-align: left;"></i>
+
+                    </li>
+                    <li class="content-sidebar-item">
+                        <i class="fa-solid fa-gear" style="color: #ffffff;"></i>
+                        @Html.ActionLink("Quản lý Nhà Cung Cấp", "Index", "NhaCungCaps")
+                        <i class="fa-solid fa-angle-right" style="color: #ffffff; text-align: left;"></i>
+                    </li>
+                    <li class="content-sidebar-item">
+                        <i class="fa-solid fa-gear" style="color: #ffffff;"></i>
+                        @Html.ActionLink("Quản lý Đơn Hàng", "Index", "DonHangs")
+                        <i class="fa-solid fa-angle-right" style="color: #ffffff; text-align: left;"></i>
+                    </li>
+                    <li class="content-sidebar-item">
+                        <i class="fa-solid fa-gear" style="color: #ffffff;"></i>
+                        @Html.ActionLink("Quản lý Chi tiết Đơn Hàng", "Index", "ChiTietDonHang")
+                        <i class="fa-solid fa-angle-right" style="color: #ffffff; text-align: left;"></i>
+                    </li>
+                    <li class="content-sidebar-item">
+                        <i class="fa-solid fa-gear" style="color: #ffffff;"></i>
+                        @Html.ActionLink("Quản lý Nhập hàng", "Index", "NhapHangs")
+                        <i class="fa-solid fa-angle-right" style="color: #ffffff; text-align: left;"></i>
+                    </li>
+                </ul>
+
+                <ul style="margin-top: 30px; padding: 0;">
+                    <a class="content-sidebar-a" href="">Quản lý Phân quyền</a>
+                    <li class="content-sidebar-item">
+                        <i class="fa-solid fa-gear" style="color: #ffffff;"></i>
+                        @*<a href="">Quản lý Người Bán</a>*@
+                        @Html.ActionLink("Quản lý Nhân viên", "Index", "UserIDs")
+                        <i class="fa-solid fa-angle-right" style="color: #ffffff; text-align: left;"></i>
+                    </li>
+                    <li class="content-sidebar-item">
+                        <i class="fa-solid fa-gear" style="color: #ffffff;"></i>
+                        @*<a href="">Quản lý Hệ thống</a>*@
+                        @Html.ActionLink("Quản lý Nhân viên", "Index", "UserIDs")
+                        <i class="fa-solid fa-angle-right" style="color: #ffffff; text-align: left;"></i>
+                    </li>
+                </ul>
+
+                <div class="loader"></div>
+            </div>
+
+            <div class="content-center col-lg-10">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+
+    @* ---------------- PHẦN FOOTER -------------------------  *@
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-6 footer-item">
+                    <h4>company</h4>
+                    <ul>
+                        <li><a href="#">about us</a></li>
+                        <li><a href="#">our services</a></li>
+                        <li><a href="#">privacy policy</a></li>
+                        <li><a href="#">affiliate program</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 footer-item">
+                    <h4>get help</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">shipping</a></li>
+                        <li><a href="#">returns</a></li>
+                        <li><a href="#">order status</a></li>
+                        <li><a href="#">payment options</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 footer-item">
+                    <h4>online shop</h4>
+                    <ul>
+                        <li><a href="#">watch</a></li>
+                        <li><a href="#">bag</a></li>
+                        <li><a href="#">shoes</a></li>
+                        <li><a href="#">dress</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 footer-item">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="all-right-reserved">&copy;2021 Tiệm tạp hóa | All Rights Reserved</p>
+    </footer>
+</body>
+</html>
