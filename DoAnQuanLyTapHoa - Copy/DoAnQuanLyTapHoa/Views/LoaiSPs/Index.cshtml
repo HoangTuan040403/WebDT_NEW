@@ -1,4 +1,4 @@
-﻿@model IEnumerable<DoAnQuanLyTapHoa.Models.LoaiSP>
+﻿@model IEnumerable<DoAnQuanLyTapHoa.Models.PhanLoai>
 
 @{
     ViewBag.Title = "Index";
@@ -16,12 +16,7 @@
 <table class="table">
     <tr>
         <th>
-            <p>Mã Loại </p>
-            @*@Html.DisplayNameFor(model => model.MaLoai)*@
-        </th>
-        <th>
-            <p>Tên Loại</p>
-            @*@Html.DisplayNameFor(model => model.TenLoai)*@
+            @Html.DisplayNameFor(model => model.Tenloai)
         </th>
         <th></th>
     </tr>
@@ -30,14 +25,11 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.MaLoai)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TenLoai)
+                @Html.DisplayFor(modelItem => item.Tenloai)
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.MaLoai }) |
-                @*@Html.ActionLink("Details", "Details", new { id = item.TenLoai }) |*@
+                @Html.ActionLink("Details", "Details", new { id = item.MaLoai }) |
                 @Html.ActionLink("Delete", "Delete", new { id = item.MaLoai })
             </td>
         </tr>

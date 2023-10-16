@@ -21,7 +21,7 @@ namespace DoAnQuanLyTapHoa.Controllers
         }
 
         // GET: LoaiSPs/Details/
-        public ActionResult Details(string id)
+        public ActionResult Details(int id)
         {            
             if (id == null)
             {
@@ -60,7 +60,7 @@ namespace DoAnQuanLyTapHoa.Controllers
         }
 
         // GET: LoaiSPs/Edit/5
-        public ActionResult Edit(string id)
+        public ActionResult Edit(int id)
         {
             if (id == null)
             {
@@ -91,7 +91,7 @@ namespace DoAnQuanLyTapHoa.Controllers
         }
 
         // GET: LoaiSPs/Delete/5
-        public ActionResult Delete(string id)
+        public ActionResult Delete(int id)
         {
             if (id == null)
             {
