@@ -19,7 +19,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
     @*css*@
-    <link href="@Url.Content("~/Content/GiaodienKH.css")" rel="stylesheet" type="text/css" />
+    @*<link href="@Url.Content("~/Content/GiaodienKH.css")" rel="stylesheet" type="text/css" />*@
+<link href="~/Content/GD.css" rel="stylesheet" />
 
 
     <!-- gg font -->
@@ -33,65 +34,39 @@
 
     @* PHẦN HEADER  *@
     <header>
-        <nav class="navbar navbar-expand-lg">
-            <div class="nav-around container-fluid">
-                <!-- nav brand -->
-                <a class="navbar-brand" href="@Url.Action("ProductList", "SanPhams")">
-                    <img style="width: 100px; height: 80px;" src="~/Content/images/logotiemtaphoa.png" alt="Alternate Text" />
-                </a>
-
-                <!-- nav main -->
-                <div class="nav-main">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a aria-current="page" href="@Url.Action("ProductList", "SanPhams")">Tạp hóa</a>
-                            <i class="fa-solid fa-chevron-down fa-fade" style="color: #1f5151;"></i>
-                        </li>
-
-                        <li class="nav-item">
-                            <a aria-current="page" href="@Url.Action("ProductList", "SanPhams")">Sản phẩm</a>
-                            <i class="fa-solid fa-chevron-down fa-fade" style="color: #1f5151;"></i>
-                        </li>
-
-                        <li class="nav-item">
-                            <a aria-current="page" href="#">Giới thiệu</a>
-                            <i class="fa-solid fa-chevron-down fa-fade" style="color: #1f5151;"></i>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- nav end -->
-                <div class="nav-end">
-                    @using (Html.BeginForm("ProductList", "SanPhams", FormMethod.Get))
-                    {
-                        <div class="search">
-                            <div>
-                                <input type="text" placeholder="Search . . ." name="SearchString" required>
-                                @*<input type="submit" value="Tìm kiếm" class="btn btn-warning" />*@
-                            </div>
-                        </div>
-                    }
-                    
-                    <div class="dropdown">
-                        @*<i style="color: #ffffff;" class="nav-icon fa-solid fa-bars fa-flip fa-lg" data-bs-toggle="dropdown" aria-expanded="false"></i>*@
-                        <i class="fa-solid fa-user fa-bounce fa-2xl" style="margin-left: 35px; color: #424242" data-bs-toggle="dropdown" aria-expanded="false"></i>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Đổi mật khẩu</a></li>
-                            <li><a class="dropdown-item" href="#">Thông tin Cửa hàng</a></li>
-                            <li><a class="dropdown-item" href="@Url.Action("Logout", "Login")">Đăng Xuất</a></li>
-                        </ul>
-                    </div>
-
-                </div>
-            </div>
-        </nav>
+        <img src="~/Content/images/header banner.png" style="width:1520px" />
     </header>
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#"><img src="~/Content/images/logo.png" style="width:20px" ," heigh: 20px" /></a></li>
+                <li>
+                    @using (Html.BeginForm("Productlist", "SanPhams", FormMethod.Get))
+                    {
+                        <input type="text" placeholder="Bạn cần tìm gì?" name="SearchString" required><i class="fas fa-search"></i>
+                    }
+                </li>
+
+
+                <li>
+                    <a data-bs-toggle="dropdown" href="#">Điện thoại</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/XemDonHang/ShowToCart">IPHONE</a></li>
+                        <li><a class="dropdown-item" href="#">SAMSUNG</a></li>
+                        <li><a class="dropdown-item" href="#">OPPO</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"></a><button><i class="tk and cart"></i>Tài khoản và đơn hàng</button></li>
+                <li><a href="/XemDonHang//ShowToCart"</a><button><i class="tk and cart"></i>Giỏ hàng</button></li>
+            </ul>
+        </div>
+    </nav>
 
 
     @* PHẦN BODY CHỨA NỘI DUNG SẢN PHẨM *@
     <div>
         @RenderBody()
-    </div>   
+    </div>
 
     @* PHẦN FOOTER  *@
     <footer class="footer">
