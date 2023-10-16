@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLBANDTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'QLBANDT.dbo.ChiTietDH' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ChiTietDH">
+    <Key>
+      <PropertyRef Name="Soluong" />
+      <PropertyRef Name="Dongia" />
+      <PropertyRef Name="ThanhTien" />
+      <PropertyRef Name="MaDH" />
+      <PropertyRef Name="MaSP" />
+    </Key>
+    <Property Name="Soluong" Type="int" Nullable="false" />
+    <Property Name="Dongia" Type="int" Nullable="false" />
+    <Property Name="ThanhTien" Type="int" Nullable="false" />
+    <Property Name="MaDH" Type="int" Nullable="false" />
+    <Property Name="MaSP" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DonHang">
+    <Key>
+      <PropertyRef Name="MaDH" />
+    </Key>
+    <Property Name="MaDH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NgayDH" Type="date" Nullable="false" />
+    <Property Name="NguoiNhan" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DiaChiNhan" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="HTthanhtoan" Type="nvarchar" MaxLength="50" />
+    <Property Name="NgayGH" Type="date" />
+    <Property Name="Trigia" Type="int" />
+    <Property Name="Sodienthoainhan" Type="nvarchar" MaxLength="11" Nullable="false" />
+    <Property Name="MaUser" Type="int" />
+  </EntityType>
+  <EntityType Name="Mau">
+    <Key>
+      <PropertyRef Name="Mamau" />
+    </Key>
+    <Property Name="Tenmau" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Mamau" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Mau_sp">
+    <Key>
+      <PropertyRef Name="Mamau" />
+      <PropertyRef Name="MaSP" />
+    </Key>
+    <Property Name="Mamau" Type="int" Nullable="false" />
+    <Property Name="MaSP" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PhanLoai">
+    <Key>
+      <PropertyRef Name="MaLoai" />
+    </Key>
+    <Property Name="Tenloai" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="MaLoai" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SanPham">
+    <Key>
+      <PropertyRef Name="MaSP" />
+    </Key>
+    <Property Name="MaSP" Type="int" Nullable="false" />
+    <Property Name="TenSP" Type="nvarchar(max)" />
+    <Property Name="GiaSp" Type="int" />
+    <Property Name="GiaGiam" Type="int" />
+    <Property Name="SoLuong" Type="int" Nullable="false" />
+    <Property Name="Hinh1" Type="nvarchar(max)" />
+    <Property Name="Hinh2" Type="nvarchar(max)" />
+    <Property Name="Hinh3" Type="nvarchar(max)" />
+    <Property Name="Hinh4" Type="nvarchar(max)" />
+    <Property Name="Hinh5" Type="nvarchar(max)" />
+    <Property Name="Mota" Type="nvarchar(max)" />
+    <Property Name="Thongso" Type="nvarchar(max)" />
+    <Property Name="MaLoai" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="MaUser" />
+    </Key>
+    <Property Name="MaUser" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenUser" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="sdt" Type="nvarchar" MaxLength="11" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="100" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="100" />
+    <Property Name="NgaySinh" Type="date" />
+    <Property Name="TK" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Pass" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Roleuser" Type="nvarchar" MaxLength="10" />
+    <Property Name="Hinh" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Vourcher">
+    <Key>
+      <PropertyRef Name="MaKM" />
+    </Key>
+    <Property Name="MaKM" Type="int" Nullable="false" />
+    <Property Name="Uudai" Type="int" />
+    <Property Name="ThongTinUuDai" Type="nvarchar(max)" />
+    <Property Name="MaSP" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="YeuThich">
+    <Key>
+      <PropertyRef Name="MaYT" />
+    </Key>
+    <Property Name="MaYT" Type="int" Nullable="false" />
+    <Property Name="MaSP" Type="int" Nullable="false" />
+    <Property Name="MaUser" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__ChiTietDH__MaDH__2F10007B">
+    <End Role="DonHang" Type="Self.DonHang" Multiplicity="1" />
+    <End Role="ChiTietDH" Type="Self.ChiTietDH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DonHang">
+        <PropertyRef Name="MaDH" />
+      </Principal>
+      <Dependent Role="ChiTietDH">
+        <PropertyRef Name="MaDH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ChiTietDH__MaSP__300424B4">
+    <End Role="SanPham" Type="Self.SanPham" Multiplicity="1" />
+    <End Role="ChiTietDH" Type="Self.ChiTietDH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SanPham">
+        <PropertyRef Name="MaSP" />
+      </Principal>
+      <Dependent Role="ChiTietDH">
+        <PropertyRef Name="MaSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DonHang__MaUser__267ABA7A">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="DonHang" Type="Self.DonHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="MaUser" />
+      </Principal>
+      <Dependent Role="DonHang">
+        <PropertyRef Name="MaUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Mau_sp__Mamau__398D8EEE">
+    <End Role="Mau" Type="Self.Mau" Multiplicity="1" />
+    <End Role="Mau_sp" Type="Self.Mau_sp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Mau">
+        <PropertyRef Name="Mamau" />
+      </Principal>
+      <Dependent Role="Mau_sp">
+        <PropertyRef Name="Mamau" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Mau_sp__MaSP__3A81B327">
+    <End Role="SanPham" Type="Self.SanPham" Multiplicity="1" />
+    <End Role="Mau_sp" Type="Self.Mau_sp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SanPham">
+        <PropertyRef Name="MaSP" />
+      </Principal>
+      <Dependent Role="Mau_sp">
+        <PropertyRef Name="MaSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SanPham__MaLoai__2D27B809">
+    <End Role="PhanLoai" Type="Self.PhanLoai" Multiplicity="1" />
+    <End Role="SanPham" Type="Self.SanPham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PhanLoai">
+        <PropertyRef Name="MaLoai" />
+      </Principal>
+      <Dependent Role="SanPham">
+        <PropertyRef Name="MaLoai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Vourcher__MaSP__36B12243">
+    <End Role="SanPham" Type="Self.SanPham" Multiplicity="1" />
+    <End Role="Vourcher" Type="Self.Vourcher" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SanPham">
+        <PropertyRef Name="MaSP" />
+      </Principal>
+      <Dependent Role="Vourcher">
+        <PropertyRef Name="MaSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__YeuThich__MaSP__32E0915F">
+    <End Role="SanPham" Type="Self.SanPham" Multiplicity="1" />
+    <End Role="YeuThich" Type="Self.YeuThich" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SanPham">
+        <PropertyRef Name="MaSP" />
+      </Principal>
+      <Dependent Role="YeuThich">
+        <PropertyRef Name="MaSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__YeuThich__MaUser__33D4B598">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="YeuThich" Type="Self.YeuThich" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="MaUser" />
+      </Principal>
+      <Dependent Role="YeuThich">
+        <PropertyRef Name="MaUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QLBANDTModelStoreContainer">
+    <EntitySet Name="DonHang" EntityType="Self.DonHang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Mau" EntityType="Self.Mau" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Mau_sp" EntityType="Self.Mau_sp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PhanLoai" EntityType="Self.PhanLoai" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SanPham" EntityType="Self.SanPham" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vourcher" EntityType="Self.Vourcher" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="YeuThich" EntityType="Self.YeuThich" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ChiTietDH" EntityType="Self.ChiTietDH" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ChiTietDH].[Soluong] AS [Soluong], 
+    [ChiTietDH].[Dongia] AS [Dongia], 
+    [ChiTietDH].[ThanhTien] AS [ThanhTien], 
+    [ChiTietDH].[MaDH] AS [MaDH], 
+    [ChiTietDH].[MaSP] AS [MaSP]
+    FROM [dbo].[ChiTietDH] AS [ChiTietDH]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__ChiTietDH__MaDH__2F10007B" Association="Self.FK__ChiTietDH__MaDH__2F10007B">
+      <End Role="DonHang" EntitySet="DonHang" />
+      <End Role="ChiTietDH" EntitySet="ChiTietDH" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ChiTietDH__MaSP__300424B4" Association="Self.FK__ChiTietDH__MaSP__300424B4">
+      <End Role="SanPham" EntitySet="SanPham" />
+      <End Role="ChiTietDH" EntitySet="ChiTietDH" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DonHang__MaUser__267ABA7A" Association="Self.FK__DonHang__MaUser__267ABA7A">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="DonHang" EntitySet="DonHang" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Mau_sp__Mamau__398D8EEE" Association="Self.FK__Mau_sp__Mamau__398D8EEE">
+      <End Role="Mau" EntitySet="Mau" />
+      <End Role="Mau_sp" EntitySet="Mau_sp" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Mau_sp__MaSP__3A81B327" Association="Self.FK__Mau_sp__MaSP__3A81B327">
+      <End Role="SanPham" EntitySet="SanPham" />
+      <End Role="Mau_sp" EntitySet="Mau_sp" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SanPham__MaLoai__2D27B809" Association="Self.FK__SanPham__MaLoai__2D27B809">
+      <End Role="PhanLoai" EntitySet="PhanLoai" />
+      <End Role="SanPham" EntitySet="SanPham" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Vourcher__MaSP__36B12243" Association="Self.FK__Vourcher__MaSP__36B12243">
+      <End Role="SanPham" EntitySet="SanPham" />
+      <End Role="Vourcher" EntitySet="Vourcher" />
+    </AssociationSet>
+    <AssociationSet Name="FK__YeuThich__MaSP__32E0915F" Association="Self.FK__YeuThich__MaSP__32E0915F">
+      <End Role="SanPham" EntitySet="SanPham" />
+      <End Role="YeuThich" EntitySet="YeuThich" />
+    </AssociationSet>
+    <AssociationSet Name="FK__YeuThich__MaUser__33D4B598" Association="Self.FK__YeuThich__MaUser__33D4B598">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="YeuThich" EntitySet="YeuThich" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

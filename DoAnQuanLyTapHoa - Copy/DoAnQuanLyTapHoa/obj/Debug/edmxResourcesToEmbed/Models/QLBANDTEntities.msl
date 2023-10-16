@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="QLBANDTModelStoreContainer" CdmEntityContainer="QLBANDTEntities">
+    <EntitySetMapping Name="DonHangs">
+      <EntityTypeMapping TypeName="QLBANDTModel.DonHang">
+        <MappingFragment StoreEntitySet="DonHang">
+          <ScalarProperty Name="MaDH" ColumnName="MaDH" />
+          <ScalarProperty Name="NgayDH" ColumnName="NgayDH" />
+          <ScalarProperty Name="NguoiNhan" ColumnName="NguoiNhan" />
+          <ScalarProperty Name="DiaChiNhan" ColumnName="DiaChiNhan" />
+          <ScalarProperty Name="HTthanhtoan" ColumnName="HTthanhtoan" />
+          <ScalarProperty Name="NgayGH" ColumnName="NgayGH" />
+          <ScalarProperty Name="Trigia" ColumnName="Trigia" />
+          <ScalarProperty Name="Sodienthoainhan" ColumnName="Sodienthoainhan" />
+          <ScalarProperty Name="MaUser" ColumnName="MaUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Maus">
+      <EntityTypeMapping TypeName="QLBANDTModel.Mau">
+        <MappingFragment StoreEntitySet="Mau">
+          <ScalarProperty Name="Tenmau" ColumnName="Tenmau" />
+          <ScalarProperty Name="Mamau" ColumnName="Mamau" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PhanLoais">
+      <EntityTypeMapping TypeName="QLBANDTModel.PhanLoai">
+        <MappingFragment StoreEntitySet="PhanLoai">
+          <ScalarProperty Name="Tenloai" ColumnName="Tenloai" />
+          <ScalarProperty Name="MaLoai" ColumnName="MaLoai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SanPhams">
+      <EntityTypeMapping TypeName="QLBANDTModel.SanPham">
+        <MappingFragment StoreEntitySet="SanPham">
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+          <ScalarProperty Name="TenSP" ColumnName="TenSP" />
+          <ScalarProperty Name="GiaSp" ColumnName="GiaSp" />
+          <ScalarProperty Name="GiaGiam" ColumnName="GiaGiam" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="Hinh1" ColumnName="Hinh1" />
+          <ScalarProperty Name="Hinh2" ColumnName="Hinh2" />
+          <ScalarProperty Name="Hinh3" ColumnName="Hinh3" />
+          <ScalarProperty Name="Hinh4" ColumnName="Hinh4" />
+          <ScalarProperty Name="Hinh5" ColumnName="Hinh5" />
+          <ScalarProperty Name="Mota" ColumnName="Mota" />
+          <ScalarProperty Name="Thongso" ColumnName="Thongso" />
+          <ScalarProperty Name="MaLoai" ColumnName="MaLoai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="QLBANDTModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="MaUser" ColumnName="MaUser" />
+          <ScalarProperty Name="TenUser" ColumnName="TenUser" />
+          <ScalarProperty Name="sdt" ColumnName="sdt" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="TK" ColumnName="TK" />
+          <ScalarProperty Name="Pass" ColumnName="Pass" />
+          <ScalarProperty Name="Roleuser" ColumnName="Roleuser" />
+          <ScalarProperty Name="Hinh" ColumnName="Hinh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vourchers">
+      <EntityTypeMapping TypeName="QLBANDTModel.Vourcher">
+        <MappingFragment StoreEntitySet="Vourcher">
+          <ScalarProperty Name="MaKM" ColumnName="MaKM" />
+          <ScalarProperty Name="Uudai" ColumnName="Uudai" />
+          <ScalarProperty Name="ThongTinUuDai" ColumnName="ThongTinUuDai" />
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="YeuThiches">
+      <EntityTypeMapping TypeName="QLBANDTModel.YeuThich">
+        <MappingFragment StoreEntitySet="YeuThich">
+          <ScalarProperty Name="MaYT" ColumnName="MaYT" />
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+          <ScalarProperty Name="MaUser" ColumnName="MaUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChiTietDHs">
+      <EntityTypeMapping TypeName="QLBANDTModel.ChiTietDH">
+        <MappingFragment StoreEntitySet="ChiTietDH">
+          <ScalarProperty Name="Soluong" ColumnName="Soluong" />
+          <ScalarProperty Name="Dongia" ColumnName="Dongia" />
+          <ScalarProperty Name="ThanhTien" ColumnName="ThanhTien" />
+          <ScalarProperty Name="MaDH" ColumnName="MaDH" />
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="Mau_sp" TypeName="QLBANDTModel.Mau_sp" StoreEntitySet="Mau_sp">
+      <EndProperty Name="Mau">
+        <ScalarProperty Name="Mamau" ColumnName="Mamau" />
+      </EndProperty>
+      <EndProperty Name="SanPham">
+        <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -12,20 +12,29 @@ namespace DoAnQuanLyTapHoa.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class UserID
+    public partial class User
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public UserID()
+        public User()
         {
-            this.DonHang = new HashSet<DonHang>();
+            this.DonHangs = new HashSet<DonHang>();
+            this.YeuThiches = new HashSet<YeuThich>();
         }
     
         public int MaUser { get; set; }
         public string TenUser { get; set; }
-        public string RoleUser { get; set; }
-        public string Password { get; set; }
+        public string sdt { get; set; }
+        public string email { get; set; }
+        public string DiaChi { get; set; }
+        public Nullable<System.DateTime> NgaySinh { get; set; }
+        public string TK { get; set; }
+        public string Pass { get; set; }
+        public string Roleuser { get; set; }
+        public string Hinh { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DonHang> DonHang { get; set; }
+        public virtual ICollection<DonHang> DonHangs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<YeuThich> YeuThiches { get; set; }
     }
 }

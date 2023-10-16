@@ -13,10 +13,10 @@ namespace DoAnQuanLyTapHoa.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class QuanLyTapHoaFinalEntities1 : DbContext
+    public partial class QLBANDTEntities : DbContext
     {
-        public QuanLyTapHoaFinalEntities1()
-            : base("name=QuanLyTapHoaFinalEntities1")
+        public QLBANDTEntities()
+            : base("name=QLBANDTEntities")
         {
         }
     
@@ -25,13 +25,13 @@ namespace DoAnQuanLyTapHoa.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<ChiTietDonHang> ChiTietDonHang { get; set; }
-        public virtual DbSet<DonHang> DonHang { get; set; }
-        public virtual DbSet<LoaiSP> LoaiSP { get; set; }
-        public virtual DbSet<NhaCungCap> NhaCungCap { get; set; }
-        public virtual DbSet<NhapHang> NhapHang { get; set; }
-        public virtual DbSet<SanPham> SanPham { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
-        public virtual DbSet<UserID> UserID { get; set; }
+        public virtual DbSet<DonHang> DonHangs { get; set; }
+        public virtual DbSet<Mau> Maus { get; set; }
+        public virtual DbSet<PhanLoai> PhanLoais { get; set; }
+        public virtual DbSet<SanPham> SanPhams { get; set; }
+        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Vourcher> Vourchers { get; set; }
+        public virtual DbSet<YeuThich> YeuThiches { get; set; }
+        public virtual DbSet<ChiTietDH> ChiTietDHs { get; set; }
     }
 }

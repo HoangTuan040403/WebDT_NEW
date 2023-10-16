@@ -12,12 +12,13 @@ namespace DoAnQuanLyTapHoa.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class sysdiagrams
+    public partial class YeuThich
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public int MaYT { get; set; }
+        public int MaSP { get; set; }
+        public int MaUser { get; set; }
+    
+        public virtual SanPham SanPham { get; set; }
+        public virtual User User { get; set; }
     }
 }

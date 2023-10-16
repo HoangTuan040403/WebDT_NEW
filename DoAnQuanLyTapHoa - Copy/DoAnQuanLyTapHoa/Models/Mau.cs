@@ -12,15 +12,18 @@ namespace DoAnQuanLyTapHoa.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class NhapHang
+    public partial class Mau
     {
-        public string MaNhapHang { get; set; }
-        public string MaSP { get; set; }
-        public string MaNCC { get; set; }
-        public Nullable<System.DateTime> NgayNhapSP { get; set; }
-        public Nullable<int> SoLuongNhap { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Mau()
+        {
+            this.SanPhams = new HashSet<SanPham>();
+        }
     
-        public virtual NhaCungCap NhaCungCap { get; set; }
-        public virtual SanPham SanPham { get; set; }
+        public string Tenmau { get; set; }
+        public int Mamau { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SanPham> SanPhams { get; set; }
     }
 }

@@ -12,14 +12,13 @@ namespace DoAnQuanLyTapHoa.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class ChiTietDonHang
+    public partial class ChiTietDH
     {
-        public int MaCTDH { get; set; }
-        public string MaSP { get; set; }
-        public Nullable<int> MaDH { get; set; }
-        public Nullable<int> DonGia { get; set; }
-        public Nullable<int> SoLuong { get; set; }
-        public Nullable<int> TongTienSP { get; set; }
+        public int Soluong { get; set; }
+        public int Dongia { get; set; }
+        public int ThanhTien { get; set; }
+        public int MaDH { get; set; }
+        public int MaSP { get; set; }
     
         public virtual DonHang DonHang { get; set; }
         public virtual SanPham SanPham { get; set; }

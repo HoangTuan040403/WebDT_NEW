@@ -17,16 +17,21 @@ namespace DoAnQuanLyTapHoa.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public DonHang()
         {
-            this.ChiTietDonHang = new HashSet<ChiTietDonHang>();
+            this.ChiTietDHs = new HashSet<ChiTietDH>();
         }
     
         public int MaDH { get; set; }
-        public Nullable<System.DateTime> NgayMua { get; set; }
+        public System.DateTime NgayDH { get; set; }
+        public string NguoiNhan { get; set; }
+        public string DiaChiNhan { get; set; }
+        public string HTthanhtoan { get; set; }
+        public Nullable<System.DateTime> NgayGH { get; set; }
+        public Nullable<int> Trigia { get; set; }
+        public string Sodienthoainhan { get; set; }
         public Nullable<int> MaUser { get; set; }
-        public Nullable<int> TongTien { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ChiTietDonHang> ChiTietDonHang { get; set; }
-        public virtual UserID UserID { get; set; }
+        public virtual ICollection<ChiTietDH> ChiTietDHs { get; set; }
+        public virtual User User { get; set; }
     }
 }

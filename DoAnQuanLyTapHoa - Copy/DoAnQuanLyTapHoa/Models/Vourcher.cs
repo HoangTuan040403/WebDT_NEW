@@ -12,18 +12,13 @@ namespace DoAnQuanLyTapHoa.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class LoaiSP
+    public partial class Vourcher
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public LoaiSP()
-        {
-            this.SanPham = new HashSet<SanPham>();
-        }
+        public int MaKM { get; set; }
+        public Nullable<int> Uudai { get; set; }
+        public string ThongTinUuDai { get; set; }
+        public int MaSP { get; set; }
     
-        public string MaLoai { get; set; }
-        public string TenLoai { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SanPham> SanPham { get; set; }
+        public virtual SanPham SanPham { get; set; }
     }
 }
