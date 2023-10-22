@@ -48,37 +48,37 @@ namespace DoAnQuanLyTapHoa.Controllers
         // POST: SanPhams/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MaSP,TenSP,HinhSP,MoTaSP,GiaSP,SoLuongSP,MaLoai,MaNSX")] SanPham sanPham,
-            HttpPostedFileBase HinhSP)
+        public ActionResult Create([Bind(Include = "MaSP,TenSP,GiaSp,GiaGiam,SoLuong,Hinh1,Hinh2,Hinh3,Hinh4,Hinh5,Mota,Thongso,MaLoai")] SanPham sanPham,
+            HttpPostedFileBase Hinh1)
         {
             if (ModelState.IsValid)
             {
 
-                if (HinhSP != null)
+                if (Hinh1 != null)
                 {
                     //Lấy tên file của hình được up lên
-                    var fileName = Path.GetFileName(HinhSP.FileName);
+                    var fileName = Path.GetFileName(Hinh1.FileName);
                     //Tạo đường dẫn tới file
-                    var path = Path.Combine(Server.MapPath("~/Images"), fileName);
+                    var path = Path.Combine(Server.MapPath("~/Content/images"), fileName);
                     //Lưu tên
                     sanPham.Hinh1 = fileName;
                     //Save vào Images Folder
-                    HinhSP.SaveAs(path);
+                    Hinh1.SaveAs(path);
                 }
-
                 db.SanPhams.Add(sanPham);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.MaLoai = new SelectList(db.PhanLoais, "MaLoai", "TenLoai", sanPham.MaLoai);
+            ViewBag.MaLoai = new SelectList(db.PhanLoais, "MaLoai", "Tenloai", sanPham.MaLoai);
             return View(sanPham);
         }
 
-        // GET: SanPhams/Edit/5
-        public ActionResult Edit(string id)
+        // GET: Product/Edit/5
+        public ActionResult Edit(int? id)
         {
             if (id == null)
             {
@@ -89,27 +89,38 @@ namespace DoAnQuanLyTapHoa.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.MaLoai = new SelectList(db.PhanLoais, "MaLoai", "TenLoai", sanPham.MaLoai);
+            ViewBag.MaLoai = new SelectList(db.PhanLoais, "MaLoai", "Tenloai", sanPham.MaLoai);
             return View(sanPham);
         }
 
-        // POST: SanPhams/Edit/5
+        // POST: Product/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MaSP,TenSP,HinhSP,MoTaSP,GiaSP,SoLuongSP,MaLoai,MaNSX")] SanPham sanPham)
+        public ActionResult Edit([Bind(Include = "MaSP,TenSP,GiaSp,GiaGiam,SoLuong,Hinh1,Hinh2,Hinh3,Hinh4,Hinh5,Mota,Thongso,MaLoai")] SanPham sanPham,
+            HttpPostedFileBase Hinh1)
         {
             if (ModelState.IsValid)
             {
+                if (Hinh1 != null)
+                {
+                    //Lấy tên file của hình được up lên
+                    var fileName = Path.GetFileName(Hinh1.FileName);
+                    //Tạo đường dẫn tới file
+                    var path = Path.Combine(Server.MapPath("~/Content/images"), fileName);
+                    //Lưu tên
+                    sanPham.Hinh1 = fileName;
+                    //Save vào Images Folder
+                    Hinh1.SaveAs(path);
+                }
                 db.Entry(sanPham).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.MaLoai = new SelectList(db.PhanLoais, "MaLoai", "TenLoai", sanPham.MaLoai);
+            ViewBag.MaLoai = new SelectList(db.PhanLoais, "MaLoai", "Tenloai", sanPham.MaLoai);
             return View(sanPham);
         }
-
         // GET: SanPhams/Delete/5
         public ActionResult Delete(string id)
         {
