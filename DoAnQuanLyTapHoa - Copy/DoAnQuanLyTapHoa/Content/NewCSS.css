@@ -1,0 +1,317 @@
+﻿body {
+    /*padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ------------------- css phan header --------------------*/
+/*header {
+    height: 70px;
+}*/
+
+/* navbar */
+/*nav {
+    height: 70px;
+}
+
+.nav-around {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 100px;
+    
+   
+}
+
+.nav-item {
+    margin: 0 20px;
+    position: relative;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+    .nav-item > i {
+        margin-left: 10px;
+    }
+
+    .nav-item > a {
+        color: #000000;
+        font-weight: bold;
+        font-size: 20px;
+        text-decoration: none;
+    }
+
+.nav-end {
+    display: flex;
+}
+
+.nav-icon {
+    margin: 0 30px;
+    color: #000000;
+    font-size: 1.7rem;
+}
+
+    .nav-icon:hover {
+        transform: scale(1.2, 0.9);
+        font-size: 2rem;
+    }*/
+
+/*------------------------- css phần thanh tìm kiếm của phần HEADER ---------------------*/
+
+/*.search > div {
+    display: inline-block;
+    position: relative;
+    filter: drop-shadow(0 1px #0091c2);
+}
+
+    .search > div:after {
+        content: "";
+        background: #000000;
+        width: 5px;
+        height: 20px;
+        position: absolute;
+        top: 20px;
+        right: 2px;
+        left: 34px;
+        transform: rotate(118deg);
+    }
+
+    .search > div > input {
+        color: #000000;
+        font-size: 20px;
+        background: transparent;
+        width: 25px;
+        height: 25px;
+        padding: 13px;
+        border: solid 4px #000000;
+        outline: none;
+        border-radius: 35px;
+        transition: width 0.5s;
+    }
+
+        .search > div > input::placeholder {
+            color: #efefef;
+            opacity: 0;
+            transition: opacity 150ms ease-out;
+        }
+
+        .search > div > input:focus::placeholder {
+            opacity: 1;
+        }
+
+        .search > div > input:focus,
+        .search > div > input:not(:placeholder-shown) {
+            width: 250px;
+        }*/
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    text-align: center;
+}
+/*-----------------nav--------------------*/
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+nav {
+    background-color: #ff0000;
+    height: 50px;
+    padding: 8px;
+}
+
+    nav ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+        /*------------------CSS SEARCH---------------------*/
+        nav ul li, a {
+            color: white;
+            font-size: 17px;
+        }
+
+            nav ul li:nth-child(2) {
+                position: relative;
+            }
+
+                nav ul li:nth-child(2) input {
+                    height: 30px;
+                    width: 100%;
+                    border-radius: 5px;
+                    border: none;
+                    outline: none;
+                }
+
+                nav ul li:nth-child(2) i {
+                    position: absolute;
+                    font-size: 15px;
+                    right: 12px;
+                    line-height: 30px;
+                    cursor: pointer;
+                }
+            /*-----------------------CSS BUTTON-------------------------*/
+            nav ul li:nth-child(4) button {
+                height: 30px;
+                padding: 0 8px;
+                cursor: pointer;
+                background-color: #e80707;
+                border-radius: 5px;
+                border: 1px solid #e80707;
+                color: white
+            }
+
+            nav ul li:nth-child(5) button {
+                height: 30px;
+                padding: 0 8px;
+                cursor: pointer;
+                background-color: #e80707;
+                border-radius: 5px;
+                border: 1px solid #e80707;
+                color:white
+            }
+
+
+
+
+
+
+/* ------------------------------- CSS PHẦN FOOOTER --------------------------------------- */
+ul {
+    list-style: none;
+}
+
+.footer {
+    background-color: #dddddd;
+    padding: 50px 0;
+    margin: 20px 0px 0px 0px;
+    height: 280px;
+}
+
+
+.footer-item > h4 {
+    font-size: 18px;
+    color: #000000;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+}
+
+.footer-item h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #e91e63;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+
+.footer-item ul li a {
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #000000;
+    text-decoration: none;
+    font-weight: 400;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+    .footer-item ul li a:hover {
+        color: #ffffff;
+        padding-left: 8px;
+    }
+
+.footer-item .social-links a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: #7D7463;
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+}
+
+    .footer-item .social-links a:hover {
+        color: #24262b;
+        background-color: #ffffff;
+    }
+
+/*responsive*/
+@media(max-width: 767px) {
+    .footer-item {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+}
+
+@media(max-width: 574px) {
+    .footer-item {
+        width: 100%;
+    }
+}
+
+.all-right-reserved {
+    height: 50px;
+    width: 100%;
+    background-color: #7D7463;
+    text-align: center;
+    line-height: 3;
+    color: #000000;
+}
+
+
+
+.product-grid-style {
+    margin-top: -20px
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: top;
+}
+
+.product-grid-style > [class*="col-"] {
+    margin-top: 30px
+}
+
+.product-grid-style .product-img {
+    position: relative
+}
+
+    .product-grid-style .product-img img {
+        border-radius: 0.25rem
+    }
+
+.product-grid-style .product-details {
+    transition: all .3s ease 0s;
+    position: relative
+}
+
+.product-details .product-cart {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999
+}

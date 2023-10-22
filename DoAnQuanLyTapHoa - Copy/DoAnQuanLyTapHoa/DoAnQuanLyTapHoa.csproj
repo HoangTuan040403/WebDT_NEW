@@ -290,6 +290,7 @@
     <Content Include="Content\images\vidBanHang.mp4" />
     <Content Include="Content\images\xaxi.jpg" />
     <Content Include="Content\masterlayout.css" />
+    <Content Include="Content\NewCSS.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
