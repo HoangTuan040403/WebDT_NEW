@@ -164,5 +164,24 @@ namespace DoAnQuanLyTapHoa.Controllers
             }
             base.Dispose(disposing);
         }
+        public ActionResult MoTa(int id)
+        {
+
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            SanPham sach = db.SanPhams.Find(id);
+            //var sach = database.SACHes.Where(s => s.Masach == id);
+            if (sach == null)
+            {
+                return HttpNotFound();
+            }
+            return View(sach);
+        }
+        public ActionResult ThongTin()
+        {
+            return View();
+        }
     }
 }

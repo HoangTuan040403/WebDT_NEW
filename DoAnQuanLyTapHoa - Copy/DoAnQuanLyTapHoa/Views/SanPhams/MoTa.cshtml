@@ -1,0 +1,24 @@
+﻿@model DoAnQuanLyTapHoa.Models.SanPham
+
+@{
+    ViewBag.Title = "MoTa";
+    Layout = "~/Views/Shared/GiaoDienKHLayout.cshtml";
+}
+
+<br />
+<div class="row">
+    <div class="offset-md-1 col-md-4">
+        <img style="width: 100%;" src="~/Content/images/@Model.Hinh1" alt="" />
+
+    </div>
+    <div class="col-md-6 details">
+        <h3>Tên sản phẩm: @Model.TenSP</h3>
+        <p style="text-align: justify">
+            <span style="font-weight: bold"> Mô tả sản phẩm:</span>@Model.Mota
+        </p>
+        <p class="price">
+            Giá bán: <span style="color:red; font-size:32px;">@Model.GiaSp VNĐ</span>
+        </p>
+    </div>
+</div>
+

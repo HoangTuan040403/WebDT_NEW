@@ -405,6 +405,8 @@
     <Content Include="Views\ChiTietDonHangs\Details.cshtml" />
     <Content Include="Views\ChiTietDonHangs\Edit.cshtml" />
     <Content Include="Views\ChiTietDonHangs\Index.cshtml" />
+    <Content Include="Views\SanPhams\MoTa.cshtml" />
+    <Content Include="Views\SanPhams\ThongTin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
