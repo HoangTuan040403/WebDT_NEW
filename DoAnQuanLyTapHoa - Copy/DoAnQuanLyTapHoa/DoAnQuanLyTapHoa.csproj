@@ -131,6 +131,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\ChiTietDonHangsController.cs" />
     <Compile Include="Controllers\DonHangsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -148,12 +149,13 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\ChartData.cs" />
-    <Compile Include="Models\ChiTietDH.cs">
+    <Compile Include="Models\CTDATHANG.cs">
       <DependentUpon>QLBANDTEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\DonHang.cs">
+    <Compile Include="Models\DONDATHANG.cs">
       <DependentUpon>QLBANDTEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\MatHangMua.cs" />
     <Compile Include="Models\Mau.cs">
       <DependentUpon>QLBANDTEntities.tt</DependentUpon>
     </Compile>
@@ -416,6 +418,10 @@
     <Content Include="Views\ChiTietDonHangs\Index.cshtml" />
     <Content Include="Views\SanPhams\MoTa.cshtml" />
     <Content Include="Views\SanPhams\ThongTin.cshtml" />
+    <Content Include="Views\Cart\GioHangPartial.cshtml" />
+    <Content Include="Views\Cart\DatHang.cshtml" />
+    <Content Include="Views\Cart\DatHang2.cshtml" />
+    <Content Include="Views\Cart\HienThiGioHang.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

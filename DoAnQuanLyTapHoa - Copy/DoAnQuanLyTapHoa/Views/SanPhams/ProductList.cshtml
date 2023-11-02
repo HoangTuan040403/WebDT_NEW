@@ -187,7 +187,11 @@
 </div>
 
 <hr />
-
+<th>
+    <button class="text-black">
+        @Html.ActionLink("A->Z", "ProductList", new { sortOrder = ViewBag.TenSpSortParm })
+    </button>
+</th>
 <div class="container">
     <div class="row">
         @foreach (var item in Model)
@@ -200,7 +204,7 @@
                     </a>
                     <p class="namepro p-1">@Html.DisplayFor(model => item.TenSP)</p>
                     <p class="price">@Html.DisplayFor(model => item.GiaSp)</p>
-                    <a href="/XemDonHang/TaoDonHang/@item.MaSP"><button>Thêm vào giỏ hàng</button></a>
+                    <a href="@Url.Action("ThemSanPhamVaoGio","Cart", new {MaSP=item.MaSP})"><button>Thêm vào giỏ hàng</button></a>
                 </div>
             </div>
 

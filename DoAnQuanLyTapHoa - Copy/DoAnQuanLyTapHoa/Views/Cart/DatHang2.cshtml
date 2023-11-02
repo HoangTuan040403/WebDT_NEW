@@ -1,0 +1,91 @@
+﻿
+@{
+    ViewBag.Title = "DatHang2";
+    Layout = "~/Views/Shared/GiaoDienKHLayout.cshtml";
+}
+
+<h2 style="text-align:center">THÔNG TIN GIỎ HÀNG</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Tên sản phẩm</th>
+            <th>Hình sản phẩm</th>
+            <th>Giá</th>
+            <th>Số lượng</th>
+            <th>Thành tiền</th>
+            <th>Hình thức thanh toán</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var sp in Model)
+        {
+            <tr>
+                @*<td>@sp.Masp</td>*@
+                <td>@sp.Tensp</td>
+
+                <td><img src="~/Content/images/@sp.Hinh1" style="width:60px; height:60px" /></td>
+                <td>@String.Format("{0:0,0}", sp.Gia)</td>
+                <td>@sp.SoLuong</td>
+                <td>@String.Format("{0:0,0}", sp.ThanhTien())</td>
+                <td>
+                    @*@if (Session["Payment"] == Session["COD"])
+                        {
+                            Session["Payment"] = Session["COD"];
+
+                        }
+                        else
+                        {
+                            Session["Payment"] = Session["CK"];
+                        }*@
+
+
+            </tr>
+        }
+        <tr style="font-weight:bold; text-align:right; color:red;">
+            <td colspan="4">Tổng số lượng: @ViewBag.TongSL</td>
+            <td colspan="5">Tổng tiền: @ViewBag.TongTien</td>
+        </tr>
+    </tbody>
+</table>
+<tfoot class="thanhtoan">
+    <tr>
+        <td colspan="6">
+            <br />
+            <h4 class="headerTextOfQuanLy" style="margin: 0px;">THANH TOÁN</h4>
+            <div class="submit-thanhtoan">
+                @using (Html.BeginForm("CheckOut", "Cart", FormMethod.Post))
+                {
+                    <table style="border-collapse:separate; border-spacing:5px;">
+                        <tr>
+                            <td>Số điện thoại:</td>
+                            <td><input style="width: 200px" type="text" name="SDTNhan" required" value="@Session["SDT"]" /></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Tên người nhận:
+                            </td>
+                            <td>
+                                <input style="width: 200px" type="text" name="NguoiNhan" required" value="@Session["TenNgNhan"]" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Địa chỉ nhận:</td>
+                            <td><input style="width: 200px" type="text" name="DCNhan" required" value="@Session["DCNhan"]" /></td>
+                        </tr>
+
+
+                        <tr>
+                            <td>
+                                <input style="width: 200px; background-color: #424242;" type="submit" value="Thanh toán" class="btn btn-dark" />
+                                <a href="/XemDonHang/Order/" class="btn-default">Thêm vào giỏ hàng</a>
+                            </td>
+                        </tr>
+                    </table>
+                }
+            </div>
+
+        </td>
+
+    </tr>
+</tfoot>
+

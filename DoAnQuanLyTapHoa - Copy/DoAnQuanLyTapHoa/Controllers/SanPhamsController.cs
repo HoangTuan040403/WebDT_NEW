@@ -9,6 +9,7 @@ using System.Web;
 using System.Web.Mvc;
 using DoAnQuanLyTapHoa.Models;
 using System.Globalization;
+using System.Data.SqlClient;
 
 namespace DoAnQuanLyTapHoa.Controllers
 {
@@ -149,8 +150,10 @@ namespace DoAnQuanLyTapHoa.Controllers
 
         // GET: Products
         [HttpGet]
-        public ActionResult ProductList(String searchString)
+        public ActionResult ProductList(String searchString, string sortOrder)
         {
+            ViewBag.MaSpSortParm = String.IsNullOrEmpty(sortOrder) ? "masp_desc" : "";
+            ViewBag.TenSpSortParm = sortOrder == "tensp" ? "tensp_desc" : "tensp";
             // Tạo Products và có tham chiếu đến Loại sản phẩm:
             var products = db.SanPhams.Include(p => p.PhanLoai);
 
@@ -162,7 +165,23 @@ namespace DoAnQuanLyTapHoa.Controllers
             else
             {
                 Console.WriteLine("Không tìm thấy sản phẩm nào");
-            }    
+            }
+            switch (sortOrder)
+            {
+                case "masp_desc":
+                    products = products.OrderByDescending(s => s.MaSP);
+                    break;
+                case "tensp":
+                    products = products.OrderBy(s => s.TenSP);
+                    break;
+                case "tensp_desc":
+                    products = products.OrderByDescending(s => s.TenSP);
+                    break;
+                default:
+                    products = products.OrderBy(s => s.MaSP);
+                    break;
+            }
+
             return View(products.ToList());
 
         }
