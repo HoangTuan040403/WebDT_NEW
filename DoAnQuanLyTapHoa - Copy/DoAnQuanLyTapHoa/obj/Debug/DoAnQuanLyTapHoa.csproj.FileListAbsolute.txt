@@ -597,3 +597,7 @@ D:\Tai Lieu\Kien Thuc\Hoc ky 1 nam 3\CNPMNC-LT\WebBan_DT\WebDT_NEW\DoAnQuanLyTap
 D:\Tai Lieu\Kien Thuc\Hoc ky 1 nam 3\CNPMNC-LT\WebBan_DT\WebDT_NEW\DoAnQuanLyTapHoa - Copy\DoAnQuanLyTapHoa\obj\Debug\DoAnQuanLyTapHoa.csproj.CopyComplete
 D:\Tai Lieu\Kien Thuc\Hoc ky 1 nam 3\CNPMNC-LT\WebBan_DT\WebDT_NEW\DoAnQuanLyTapHoa - Copy\DoAnQuanLyTapHoa\obj\Debug\DoAnQuanLyTapHoa.dll
 D:\Tai Lieu\Kien Thuc\Hoc ky 1 nam 3\CNPMNC-LT\WebBan_DT\WebDT_NEW\DoAnQuanLyTapHoa - Copy\DoAnQuanLyTapHoa\obj\Debug\DoAnQuanLyTapHoa.pdb
+E:\HUFLIT\2023-2024\PROJECT\CNPM\WebDT_NEW\DoAnQuanLyTapHoa - Copy\DoAnQuanLyTapHoa\obj\Debug\DoAnQuanLyTapHoa.csproj.AssemblyReference.cache
+E:\HUFLIT\2023-2024\PROJECT\CNPM\WebDT_NEW\DoAnQuanLyTapHoa - Copy\DoAnQuanLyTapHoa\obj\Debug\DoAnQuanLyTapHoa.csproj.CoreCompileInputs.cache
+E:\HUFLIT\2023-2024\PROJECT\CNPM\WebDT_NEW\DoAnQuanLyTapHoa - Copy\DoAnQuanLyTapHoa\obj\Debug\DoAnQuanLyTapHoa.dll
+E:\HUFLIT\2023-2024\PROJECT\CNPM\WebDT_NEW\DoAnQuanLyTapHoa - Copy\DoAnQuanLyTapHoa\obj\Debug\DoAnQuanLyTapHoa.pdb

@@ -1,18 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="QLBANDTModelStoreContainer" CdmEntityContainer="QLBANDTEntities">
-    <EntitySetMapping Name="DonHangs">
-      <EntityTypeMapping TypeName="QLBANDTModel.DonHang">
-        <MappingFragment StoreEntitySet="DonHang">
-          <ScalarProperty Name="MaDH" ColumnName="MaDH" />
-          <ScalarProperty Name="NgayDH" ColumnName="NgayDH" />
-          <ScalarProperty Name="NguoiNhan" ColumnName="NguoiNhan" />
-          <ScalarProperty Name="DiaChiNhan" ColumnName="DiaChiNhan" />
-          <ScalarProperty Name="HTthanhtoan" ColumnName="HTthanhtoan" />
-          <ScalarProperty Name="NgayGH" ColumnName="NgayGH" />
-          <ScalarProperty Name="Trigia" ColumnName="Trigia" />
-          <ScalarProperty Name="Sodienthoainhan" ColumnName="Sodienthoainhan" />
+    <EntitySetMapping Name="CTDATHANGs">
+      <EntityTypeMapping TypeName="QLBANDTModel.CTDATHANG">
+        <MappingFragment StoreEntitySet="CTDATHANG">
+          <ScalarProperty Name="SODH" ColumnName="SODH" />
+          <ScalarProperty Name="Soluong" ColumnName="Soluong" />
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+          <ScalarProperty Name="Dongia" ColumnName="Dongia" />
+          <ScalarProperty Name="Thanhtien" ColumnName="Thanhtien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DONDATHANGs">
+      <EntityTypeMapping TypeName="QLBANDTModel.DONDATHANG">
+        <MappingFragment StoreEntitySet="DONDATHANG">
+          <ScalarProperty Name="SODH" ColumnName="SODH" />
           <ScalarProperty Name="MaUser" ColumnName="MaUser" />
+          <ScalarProperty Name="NgayDH" ColumnName="NgayDH" />
+          <ScalarProperty Name="Dagiao" ColumnName="Dagiao" />
+          <ScalarProperty Name="Ngaygiaohang" ColumnName="Ngaygiaohang" />
+          <ScalarProperty Name="Tennguoinhan" ColumnName="Tennguoinhan" />
+          <ScalarProperty Name="Diachinhan" ColumnName="Diachinhan" />
+          <ScalarProperty Name="Trigia" ColumnName="Trigia" />
+          <ScalarProperty Name="Dienthoainhan" ColumnName="Dienthoainhan" />
+          <ScalarProperty Name="HinhThucTT" ColumnName="HinhThucTT" />
+          <ScalarProperty Name="HTGiaohang" ColumnName="HTGiaohang" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -82,8 +95,8 @@
           <ScalarProperty Name="email" ColumnName="email" />
           <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
           <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
-          <ScalarProperty Name="TK" ColumnName="TK" />
-          <ScalarProperty Name="Pass" ColumnName="Pass" />
+          <ScalarProperty Name="TenDN" ColumnName="TenDN" />
+          <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
           <ScalarProperty Name="Roleuser" ColumnName="Roleuser" />
           <ScalarProperty Name="Hinh" ColumnName="Hinh" />
         </MappingFragment>
@@ -105,17 +118,6 @@
           <ScalarProperty Name="MaYT" ColumnName="MaYT" />
           <ScalarProperty Name="MaSP" ColumnName="MaSP" />
           <ScalarProperty Name="MaUser" ColumnName="MaUser" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="ChiTietDHs">
-      <EntityTypeMapping TypeName="QLBANDTModel.ChiTietDH">
-        <MappingFragment StoreEntitySet="ChiTietDH">
-          <ScalarProperty Name="Soluong" ColumnName="Soluong" />
-          <ScalarProperty Name="Dongia" ColumnName="Dongia" />
-          <ScalarProperty Name="ThanhTien" ColumnName="ThanhTien" />
-          <ScalarProperty Name="MaDH" ColumnName="MaDH" />
-          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

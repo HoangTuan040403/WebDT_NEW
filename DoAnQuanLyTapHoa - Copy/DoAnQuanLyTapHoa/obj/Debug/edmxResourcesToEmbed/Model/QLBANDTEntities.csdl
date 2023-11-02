@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="QLBANDTModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+<Schema Namespace="QLBANDTEntities" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityType Name="CTDATHANG">
     <Key>
       <PropertyRef Name="SODH" />
@@ -243,7 +243,7 @@
     <End Role="Mau" Type="Self.Mau" Multiplicity="*" />
     <End Role="SanPham" Type="Self.SanPham" Multiplicity="*" />
   </Association>
-  <EntityContainer Name="QLBANDTEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="QLBANDTEntities1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="CTDATHANGs" EntityType="Self.CTDATHANG" />
     <EntitySet Name="DONDATHANGs" EntityType="Self.DONDATHANG" />
     <EntitySet Name="Maus" EntityType="Self.Mau" />
