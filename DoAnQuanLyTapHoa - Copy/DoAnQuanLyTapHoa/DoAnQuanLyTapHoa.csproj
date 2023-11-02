@@ -217,7 +217,11 @@
     <Content Include="Content\GiaodienKH.css" />
     <Content Include="Content\images\banhsnack.jpg" />
     <Content Include="Content\images\banhsnack1.jpg" />
+    <Content Include="Content\images\banner.png" />
+    <Content Include="Content\images\banner01.png" />
+    <Content Include="Content\images\banner02.png" />
     <Content Include="Content\images\banner1.jpg" />
+    <Content Include="Content\images\banner1.png" />
     <Content Include="Content\images\banner2.jpg" />
     <Content Include="Content\images\biatiger.jpg" />
     <Content Include="Content\images\coca.png" />
@@ -227,6 +231,10 @@
     <Content Include="Content\images\duongmiatoanphat.jpg" />
     <Content Include="Content\images\duongmiatrang.jpg" />
     <Content Include="Content\images\duongvang.jpg" />
+    <Content Include="Content\images\gioithieu1.png" />
+    <Content Include="Content\images\gioithieu2.png" />
+    <Content Include="Content\images\gioithieu3.png" />
+    <Content Include="Content\images\gioithieu4.png" />
     <Content Include="Content\images\ip11_12_timnhat.png" />
     <Content Include="Content\images\ip11_9_do.png" />
     <Content Include="Content\images\ip11_9_vang.png" />
@@ -240,6 +248,7 @@
     <Content Include="Content\images\iphone-14-pro-max-den.png" />
     <Content Include="Content\images\ipse_9_trang.png" />
     <Content Include="Content\images\ipx_7_trang.png" />
+    <Content Include="Content\images\logo.png" />
     <Content Include="Content\images\logobrand.jpg" />
     <Content Include="Content\images\logotiemtaphoa.png" />
     <Content Include="Content\images\mi3mien.jpg" />
