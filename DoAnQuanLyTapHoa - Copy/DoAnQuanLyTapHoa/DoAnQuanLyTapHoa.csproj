@@ -136,6 +136,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoaiSPsController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\NguoiDungController.cs" />
     <Compile Include="Controllers\NhaCungCapsController.cs" />
     <Compile Include="Controllers\NhapHangsController.cs" />
     <Compile Include="Controllers\SanPhamsController.cs" />
@@ -146,16 +147,29 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Cart.cs" />
-    <Compile Include="Models\ChartData.cs" />
-    <Compile Include="Models\ChiTietDH.cs">
+    <Compile Include="Models\CTDATHANG.cs">
       <DependentUpon>QLBANDTEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\DonHang.cs">
+    <Compile Include="Models\DONDATHANG.cs">
       <DependentUpon>QLBANDTEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Mau.cs">
       <DependentUpon>QLBANDTEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Order.cs">
       <DependentUpon>QLBANDTEntities.tt</DependentUpon>
@@ -295,6 +309,16 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="LICENSE.txt" />
+    <Content Include="Models\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
     <Content Include="Models\QLBANDTEntities.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>QLBANDTEntities.edmx</DependentUpon>
@@ -333,6 +357,13 @@
     <Content Include="Content\bootstrap-grid.rtl.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <EntityDeploy Include="Models\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
     <EntityDeploy Include="Models\QLBANDTEntities.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>QLBANDTEntities.Designer.cs</LastGenOutput>
@@ -407,6 +438,8 @@
     <Content Include="Views\ChiTietDonHangs\Index.cshtml" />
     <Content Include="Views\SanPhams\MoTa.cshtml" />
     <Content Include="Views\SanPhams\ThongTin.cshtml" />
+    <Content Include="Views\NguoiDung\DangNhap.cshtml" />
+    <Content Include="Views\NguoiDung\DangKy.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

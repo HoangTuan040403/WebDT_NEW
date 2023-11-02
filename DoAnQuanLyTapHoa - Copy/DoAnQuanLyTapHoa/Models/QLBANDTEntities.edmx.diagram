@@ -4,26 +4,26 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="a23ed35ab6944370855b9b783446b61f" Name="Diagram1">
-        <EntityTypeShape EntityType="QLBANDTModel.DonHang" Width="1.5" PointX="6" PointY="13.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBANDTModel.Mau" Width="1.5" PointX="0.75" PointY="6.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBANDTModel.Order" Width="1.5" PointX="3" PointY="11.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBANDTModel.OrdersDetail" Width="1.5" PointX="5.25" PointY="6.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBANDTModel.PhanLoai" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBANDTModel.SanPham" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBANDTModel.User" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBANDTModel.Vourcher" Width="1.5" PointX="5.25" PointY="9.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBANDTModel.YeuThich" Width="1.5" PointX="5.25" PointY="3.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBANDTModel.ChiTietDH" Width="1.5" PointX="8.25" PointY="6.25" IsExpanded="true" />
-        <AssociationConnector Association="QLBANDTModel.FK__ChiTietDH__MaDH__4222D4EF" ManuallyRouted="false" />
-        <AssociationConnector Association="QLBANDTModel.FK__DonHang__MaUser__398D8EEE" ManuallyRouted="false" />
-        <AssociationConnector Association="QLBANDTModel.FK__OrdersDeta__MaOr__534D60F1" ManuallyRouted="false" />
-        <AssociationConnector Association="QLBANDTModel.FK__OrdersDeta__MaSP__52593CB8" ManuallyRouted="false" />
-        <AssociationConnector Association="QLBANDTModel.FK__SanPham__MaLoai__403A8C7D" ManuallyRouted="false" />
-        <AssociationConnector Association="QLBANDTModel.FK__ChiTietDH__MaSP__4316F928" ManuallyRouted="false" />
-        <AssociationConnector Association="QLBANDTModel.FK__Vourcher__MaSP__49C3F6B7" ManuallyRouted="false" />
-        <AssociationConnector Association="QLBANDTModel.FK__YeuThich__MaSP__45F365D3" ManuallyRouted="false" />
-        <AssociationConnector Association="QLBANDTModel.FK__YeuThich__MaUser__46E78A0C" ManuallyRouted="false" />
+      <Diagram DiagramId="72572a6a927843ae8d2115d6ee7446d6" Name="Diagram1">
+        <EntityTypeShape EntityType="QLBANDTModel.CTDATHANG" Width="1.5" PointX="5.25" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBANDTModel.DONDATHANG" Width="1.5" PointX="3" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBANDTModel.Mau" Width="1.5" PointX="0.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBANDTModel.Order" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBANDTModel.OrdersDetail" Width="1.5" PointX="8.25" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBANDTModel.PhanLoai" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBANDTModel.SanPham" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBANDTModel.User" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBANDTModel.Vourcher" Width="1.5" PointX="5.25" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBANDTModel.YeuThich" Width="1.5" PointX="5.25" PointY="3.875" IsExpanded="true" />
+        <AssociationConnector Association="QLBANDTModel.FK_CTDatHang_DonDatHang" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBANDTModel.FK_CTDatHang_Sach" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBANDTModel.FK_DonDatHang_Us" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBANDTModel.FK__OrdersDeta__MaOr__59FA5E80" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBANDTModel.FK__OrdersDeta__MaSP__59063A47" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBANDTModel.FK__SanPham__MaLoai__440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBANDTModel.FK__Vourcher__MaSP__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBANDTModel.FK__YeuThich__MaSP__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBANDTModel.FK__YeuThich__MaUser__4D94879B" ManuallyRouted="false" />
         <AssociationConnector Association="QLBANDTModel.Mau_sp" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>

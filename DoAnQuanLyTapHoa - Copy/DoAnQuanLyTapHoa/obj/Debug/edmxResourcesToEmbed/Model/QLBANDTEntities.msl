@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="QLBANDTModelStoreContainer" CdmEntityContainer="QLBANDTEntities">
+  <EntityContainerMapping StorageEntityContainer="QLBANDTEntitiesStoreContainer" CdmEntityContainer="QLBANDTEntities1">
     <EntitySetMapping Name="CTDATHANGs">
-      <EntityTypeMapping TypeName="QLBANDTModel.CTDATHANG">
+      <EntityTypeMapping TypeName="QLBANDTEntities.CTDATHANG">
         <MappingFragment StoreEntitySet="CTDATHANG">
           <ScalarProperty Name="SODH" ColumnName="SODH" />
           <ScalarProperty Name="Soluong" ColumnName="Soluong" />
@@ -13,7 +13,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="DONDATHANGs">
-      <EntityTypeMapping TypeName="QLBANDTModel.DONDATHANG">
+      <EntityTypeMapping TypeName="QLBANDTEntities.DONDATHANG">
         <MappingFragment StoreEntitySet="DONDATHANG">
           <ScalarProperty Name="SODH" ColumnName="SODH" />
           <ScalarProperty Name="MaUser" ColumnName="MaUser" />
@@ -30,7 +30,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Maus">
-      <EntityTypeMapping TypeName="QLBANDTModel.Mau">
+      <EntityTypeMapping TypeName="QLBANDTEntities.Mau">
         <MappingFragment StoreEntitySet="Mau">
           <ScalarProperty Name="Tenmau" ColumnName="Tenmau" />
           <ScalarProperty Name="Mamau" ColumnName="Mamau" />
@@ -38,7 +38,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Orders">
-      <EntityTypeMapping TypeName="QLBANDTModel.Order">
+      <EntityTypeMapping TypeName="QLBANDTEntities.Order">
         <MappingFragment StoreEntitySet="Orders">
           <ScalarProperty Name="MaOr" ColumnName="MaOr" />
           <ScalarProperty Name="DateOr" ColumnName="DateOr" />
@@ -49,7 +49,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="OrdersDetails">
-      <EntityTypeMapping TypeName="QLBANDTModel.OrdersDetail">
+      <EntityTypeMapping TypeName="QLBANDTEntities.OrdersDetail">
         <MappingFragment StoreEntitySet="OrdersDetail">
           <ScalarProperty Name="MaOrD" ColumnName="MaOrD" />
           <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
@@ -60,7 +60,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="PhanLoais">
-      <EntityTypeMapping TypeName="QLBANDTModel.PhanLoai">
+      <EntityTypeMapping TypeName="QLBANDTEntities.PhanLoai">
         <MappingFragment StoreEntitySet="PhanLoai">
           <ScalarProperty Name="Tenloai" ColumnName="Tenloai" />
           <ScalarProperty Name="MaLoai" ColumnName="MaLoai" />
@@ -68,7 +68,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="SanPhams">
-      <EntityTypeMapping TypeName="QLBANDTModel.SanPham">
+      <EntityTypeMapping TypeName="QLBANDTEntities.SanPham">
         <MappingFragment StoreEntitySet="SanPham">
           <ScalarProperty Name="MaSP" ColumnName="MaSP" />
           <ScalarProperty Name="TenSP" ColumnName="TenSP" />
@@ -87,7 +87,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Users">
-      <EntityTypeMapping TypeName="QLBANDTModel.User">
+      <EntityTypeMapping TypeName="QLBANDTEntities.User">
         <MappingFragment StoreEntitySet="Users">
           <ScalarProperty Name="MaUser" ColumnName="MaUser" />
           <ScalarProperty Name="TenUser" ColumnName="TenUser" />
@@ -103,7 +103,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Vourchers">
-      <EntityTypeMapping TypeName="QLBANDTModel.Vourcher">
+      <EntityTypeMapping TypeName="QLBANDTEntities.Vourcher">
         <MappingFragment StoreEntitySet="Vourcher">
           <ScalarProperty Name="MaKM" ColumnName="MaKM" />
           <ScalarProperty Name="Uudai" ColumnName="Uudai" />
@@ -113,7 +113,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="YeuThiches">
-      <EntityTypeMapping TypeName="QLBANDTModel.YeuThich">
+      <EntityTypeMapping TypeName="QLBANDTEntities.YeuThich">
         <MappingFragment StoreEntitySet="YeuThich">
           <ScalarProperty Name="MaYT" ColumnName="MaYT" />
           <ScalarProperty Name="MaSP" ColumnName="MaSP" />
@@ -121,7 +121,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="Mau_sp" TypeName="QLBANDTModel.Mau_sp" StoreEntitySet="Mau_sp">
+    <AssociationSetMapping Name="Mau_sp" TypeName="QLBANDTEntities.Mau_sp" StoreEntitySet="Mau_sp">
       <EndProperty Name="Mau">
         <ScalarProperty Name="Mamau" ColumnName="Mamau" />
       </EndProperty>
