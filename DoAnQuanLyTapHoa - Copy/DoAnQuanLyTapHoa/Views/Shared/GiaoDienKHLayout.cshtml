@@ -84,8 +84,38 @@
                 <li><a href="/SanPhams/ThongTin">Thông tin cửa hàng</a></li>
                 <li><a href="#">Hỏi đáp</a></li>
                 <li><a href="/XemDonHang//ShowToCart"</a><i class="tk and cart"></i>Giỏ hàng</li>
-                <li><a href="#">Đăng nhập</a></li>
-                <li><a href="#">Đăng ký</a></li>
+                @if (Session["TenDN"] == null)
+                {
+                   
+
+                    <li>
+                        <a class="nav-link" href="@Url.Action("DangNhap", "NguoiDungt")">Đăng nhập</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="@Url.Action("DangKy", "NguoiDungt")">Đăng ký</a>
+                    </li>
+
+                }
+                else if (Session["TenDN"] != null)
+                {
+                  
+                    <li>
+                        @*<a class="nav-link" href="Users/Edit/@HttpContext.Current.Session["MaUser"].ToString()"><span> Hello  @Session["TenDN"]</span></a>*@
+                        <a style="color:white" href="@Url.Action("Details", "Users", new { id = Session["MaUser"]  })"> Xin chào @Session["TenDN"]</a>
+
+
+                    </li>
+                    <li>
+                        <a class="nav-link" style="text-decoration:none;"> @Html.ActionLink("Đơn mua", "DonHangKH", "SanPhams", new { IDCus = @HttpContext.Current.Session["MaUser"].ToString() }, null)</a>
+                    </li>
+
+                    <li>
+                        @*<a class="nav-link" href="">Đăng xuất</a>*@
+                        <a href="@Url.Action("DangXuat","NguoiDung")" class="nav-link">Đăng xuất</a>
+
+                    </li>
+
+                }
             </ul>
         </div>
     </nav>

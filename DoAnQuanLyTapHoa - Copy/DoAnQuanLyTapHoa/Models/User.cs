@@ -17,7 +17,7 @@ namespace DoAnQuanLyTapHoa.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public User()
         {
-            this.DonHangs = new HashSet<DonHang>();
+            this.DONDATHANGs = new HashSet<DONDATHANG>();
             this.YeuThiches = new HashSet<YeuThich>();
         }
     
@@ -27,13 +27,13 @@ namespace DoAnQuanLyTapHoa.Models
         public string email { get; set; }
         public string DiaChi { get; set; }
         public Nullable<System.DateTime> NgaySinh { get; set; }
-        public string TK { get; set; }
-        public string Pass { get; set; }
+        public string TenDN { get; set; }
+        public string MatKhau { get; set; }
         public string Roleuser { get; set; }
         public string Hinh { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DonHang> DonHangs { get; set; }
+        public virtual ICollection<DONDATHANG> DONDATHANGs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<YeuThich> YeuThiches { get; set; }
     }

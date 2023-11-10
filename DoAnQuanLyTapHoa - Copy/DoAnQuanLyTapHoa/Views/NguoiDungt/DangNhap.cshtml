@@ -1,0 +1,52 @@
+﻿@model DoAnQuanLyTapHoa.Models.User
+
+    @{
+        ViewBag.Title = "DangNhap";
+        Layout = "~/Views/Shared/LayoutLogin.cshtml";
+    }
+
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
+            <form action="DangKy" name="Account" method="post">
+                <h1>Tạo Tài Khoản</h1>
+                @*<div class="social-container"></div>*@
+                <input type="text" placeholder="Họ và tên" name="TenUser" />
+                <input type="text" placeholder="Tên Đăng nhập" name="TenDN" />
+                <input type="password" placeholder="Mật khẩu" name="MatKhau" />
+                <input type="email" placeholder="Email" name="email" />
+                <input type="text" placeholder="Địa chỉ" name="DiaChi" />
+                <input type="number" placeholder="Số điện thoại" name="sdt" />
+                <td>Ngày sinh</td>
+                <input type="date" placeholder="Ngày sinh" name="Ngaysinh" />
+                <button>Đăng Ký</button>
+            </form>
+        </div>
+
+        <div class="form-container sign-in-container">
+            <form action="DangNhap" name="Account" Method="post">
+                <h1>Đăng Nhập</h1>
+                <div class="social-container">
+                </div>
+                <input type="text" placeholder="Tên Đăng nhập" name="TenDN" />
+                <input type="password" placeholder="Mật khẩu" name="MatKhau" />
+                <button>Đăng Nhập</button>
+            </form>
+        </div>
+
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Xin Chào!</h1>
+                    <button class="ghost" id="signIn">Đăng Nhập</button>
+                    <a style="color:white; font-weight:bold;" class="ghost" href="~/SanPhams/ProductList">Về Trang Chủ</a>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Xin Chào!</h1>
+                    <button class="ghost" id="signUp">Đăng Ký</button>
+                    <a style="color: white; font-weight: bold;" class="ghost" href="~/SanPhams/ProductList">Về Trang Chủ</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+

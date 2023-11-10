@@ -136,6 +136,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoaiSPsController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\NguoiDungtController.cs" />
     <Compile Include="Controllers\NhaCungCapsController.cs" />
     <Compile Include="Controllers\NhapHangsController.cs" />
     <Compile Include="Controllers\SanPhamsController.cs" />
@@ -148,10 +149,10 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\ChartData.cs" />
-    <Compile Include="Models\ChiTietDH.cs">
+    <Compile Include="Models\CTDATHANG.cs">
       <DependentUpon>QLBANDTEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\DonHang.cs">
+    <Compile Include="Models\DONDATHANG.cs">
       <DependentUpon>QLBANDTEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Mau.cs">
@@ -298,6 +299,7 @@
     <Content Include="Content\images\thanhtoanthanhcong.png" />
     <Content Include="Content\images\vidBanHang.mp4" />
     <Content Include="Content\images\xaxi.jpg" />
+    <Content Include="Content\Login.css" />
     <Content Include="Content\masterlayout.css" />
     <Content Include="Content\NewCSS.css" />
     <Content Include="favicon.ico" />
@@ -359,6 +361,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\Login.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -416,6 +419,8 @@
     <Content Include="Views\ChiTietDonHangs\Index.cshtml" />
     <Content Include="Views\SanPhams\MoTa.cshtml" />
     <Content Include="Views\SanPhams\ThongTin.cshtml" />
+    <Content Include="Views\Shared\LayoutLogin.cshtml" />
+    <Content Include="Views\NguoiDungt\DangNhap.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
