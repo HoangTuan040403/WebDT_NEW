@@ -12,26 +12,28 @@ namespace DoAnQuanLyTapHoa.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class DonHang
+    public partial class DONDATHANG
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public DonHang()
+        public DONDATHANG()
         {
-            this.ChiTietDHs = new HashSet<ChiTietDH>();
+            this.CTDATHANGs = new HashSet<CTDATHANG>();
         }
     
-        public int MaDH { get; set; }
-        public System.DateTime NgayDH { get; set; }
-        public string NguoiNhan { get; set; }
-        public string DiaChiNhan { get; set; }
-        public string HTthanhtoan { get; set; }
-        public Nullable<System.DateTime> NgayGH { get; set; }
-        public Nullable<int> Trigia { get; set; }
-        public string Sodienthoainhan { get; set; }
+        public int SODH { get; set; }
         public Nullable<int> MaUser { get; set; }
+        public Nullable<System.DateTime> NgayDH { get; set; }
+        public Nullable<bool> Dagiao { get; set; }
+        public Nullable<System.DateTime> Ngaygiaohang { get; set; }
+        public string Tennguoinhan { get; set; }
+        public string Diachinhan { get; set; }
+        public Nullable<decimal> Trigia { get; set; }
+        public string Dienthoainhan { get; set; }
+        public Nullable<bool> HinhThucTT { get; set; }
+        public Nullable<bool> HTGiaohang { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ChiTietDH> ChiTietDHs { get; set; }
+        public virtual ICollection<CTDATHANG> CTDATHANGs { get; set; }
         public virtual User User { get; set; }
     }
 }

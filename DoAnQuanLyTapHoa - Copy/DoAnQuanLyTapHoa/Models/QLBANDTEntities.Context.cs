@@ -25,7 +25,8 @@ namespace DoAnQuanLyTapHoa.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<DonHang> DonHangs { get; set; }
+        public virtual DbSet<CTDATHANG> CTDATHANGs { get; set; }
+        public virtual DbSet<DONDATHANG> DONDATHANGs { get; set; }
         public virtual DbSet<Mau> Maus { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<OrdersDetail> OrdersDetails { get; set; }
@@ -34,6 +35,5 @@ namespace DoAnQuanLyTapHoa.Models
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Vourcher> Vourchers { get; set; }
         public virtual DbSet<YeuThich> YeuThiches { get; set; }
-        public virtual DbSet<ChiTietDH> ChiTietDHs { get; set; }
     }
 }
