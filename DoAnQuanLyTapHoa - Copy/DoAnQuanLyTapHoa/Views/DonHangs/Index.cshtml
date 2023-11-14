@@ -1,4 +1,4 @@
-﻿@model IEnumerable<DoAnQuanLyTapHoa.Models.DonHang>
+﻿@model IEnumerable<DoAnQuanLyTapHoa.Models.DONDATHANG>
 
 @{
     ViewBag.Title = "Index";
@@ -13,34 +13,94 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.NgayMua)
+            @Html.DisplayNameFor(model => model.NgayDH)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TongTien)
+            @Html.DisplayNameFor(model => model.Dagiao)
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.Ngaygiaohang)
+            </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.Tennguoinhan)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.UserID.TenUser)
+            @Html.DisplayNameFor(model => model.Diachinhan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Trigia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dienthoainhan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HinhThucTT)
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.HTGiaohang)
+            </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.User.TenUser)
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.NgayMua)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TongTien)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UserID.TenUser)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MaDH }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MaDH }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MaDH })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayDH)
+            </td>
+            <td>
+                @{ if (@item.Dagiao == false)
+                    {
+                        <h5 style="color:red">Đang chờ xác nhận. </h5> }
+                    else if (@item.Dagiao == true)
+                    {
+                        <h5 style="color:green">Đã xác nhận  </h5> }
+                    else
+                    {
+                        <h5 style="color:orangered">Đang chờ xác nhận </h5>
+                    }
+                }
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.Ngaygiaohang)
+                </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.Tennguoinhan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Diachinhan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Trigia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dienthoainhan)
+            </td>
+            <td>
+                @{ if (@item.HinhThucTT == false)
+                    {
+                        <div style="color:red">Thanh toán tiền mặt</div> }
+                    else if (@item.HinhThucTT == true)
+                    {
+                        <div style="color:brown">Thanh toán chuyển khoản</div>
+                    }
+                }
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.HTGiaohang)
+                </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.User.TenUser)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.SODH }) |
+                @Html.ActionLink("Details", "Details", new { id = item.SODH }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.SODH })
+            </td>
+        </tr>
+    }
 
 </table>

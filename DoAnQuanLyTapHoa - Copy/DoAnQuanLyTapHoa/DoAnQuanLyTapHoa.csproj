@@ -156,6 +156,7 @@
     <Compile Include="Models\DONDATHANG.cs">
       <DependentUpon>QLBANDTEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\MatHangMua.cs" />
     <Compile Include="Models\Mau.cs">
       <DependentUpon>QLBANDTEntities.tt</DependentUpon>
     </Compile>
