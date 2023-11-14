@@ -131,6 +131,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\ChiTietDonHangsController.cs" />
     <Compile Include="Controllers\DonHangsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -153,6 +154,7 @@
     <Compile Include="Models\DONDATHANG.cs">
       <DependentUpon>QLBANDTEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\MatHangMua.cs" />
     <Compile Include="Models\Mau.cs">
       <DependentUpon>QLBANDTEntities.tt</DependentUpon>
     </Compile>
@@ -443,6 +445,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Cart\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
