@@ -142,6 +142,7 @@
     <Compile Include="Controllers\SanPhamsController.cs" />
     <Compile Include="Controllers\TrangChuController.cs" />
     <Compile Include="Controllers\UserIDsController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Controllers\XemDonHangController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -421,6 +422,11 @@
     <Content Include="Views\SanPhams\ThongTin.cshtml" />
     <Content Include="Views\Shared\LayoutLogin.cshtml" />
     <Content Include="Views\NguoiDungt\DangNhap.cshtml" />
+    <Content Include="Views\Users\Create.cshtml" />
+    <Content Include="Views\Users\Delete.cshtml" />
+    <Content Include="Views\Users\Details.cshtml" />
+    <Content Include="Views\Users\Edit.cshtml" />
+    <Content Include="Views\Users\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
