@@ -194,5 +194,15 @@ namespace DoAnQuanLyTapHoa.Controllers
         {
             return View();
         }
+        public ActionResult DonHangKH(int? IDCus)
+        {
+            // Truy vấn dữ liệu từ cơ sở dữ liệu dựa trên IDCus
+            IDCus = (int)Session["UserID"];
+            var orders = db.DONDATHANGs
+                .Where(o => o.MaUser == IDCus)
+                .Include(o => o.CTDATHANGs)
+                .ToList();
+            return View(orders);
+        }
     }
 }
