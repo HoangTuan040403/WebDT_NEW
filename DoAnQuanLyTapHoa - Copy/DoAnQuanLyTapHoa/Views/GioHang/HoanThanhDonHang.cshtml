@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "HoanThanhDonHang";
+    Layout = "~/Views/Shared/GiaoDienKHLayout.cshtml";
+}
+
+<!-- ================ start banner area ================= -->
+<section class="blog-banner-area" id="category">
+    <div class="container h-100">
+        <div class="blog-banner">
+            <div class="text-center">
+                <h1>
+                    Đơn hàng của quý khách đã được ghi nhận. Chúng tôi sẽ liên hệ trong thời gian ngắn nhất
+                </h1>
+                <p>
+                    @Html.ActionLink("Về trang chủ", "ProductList", "SanPhams", null, new { @class = "btn btn-primary" })
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+

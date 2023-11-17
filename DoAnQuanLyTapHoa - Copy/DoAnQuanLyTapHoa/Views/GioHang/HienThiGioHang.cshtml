@@ -1,0 +1,122 @@
+﻿@using DoAnQuanLyTapHoa.Models
+@model List<MatHangMua>
+@{
+    ViewBag.Title = "HienThiGioHang";
+    Layout = "~/Views/Shared/GiaoDienKHLayout.cshtml";
+    var db = new QLBANDTEntities();
+}
+
+<!-- ================ start banner area ================= -->
+<section class="blog-banner-area" id="category">
+    <div class="container h-100">
+        <div class="blog-banner">
+            <div class="text-center">
+                <h1>Giỏ hàng</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ================ end banner area ================= -->
+<!--================Cart Area =================-->
+<section class="cart_area">
+    <div class="container">
+        <div class="cart_inner">
+            <div class="table-responsive">
+                @if (Model != null)
+                {
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Product</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Total</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                double total = item.SoLuong * (int)item.Gia;
+                                int gia = (int)item.Gia;
+                                <tr>
+                                    <td>
+                                        <div class="media">
+                                            <div class="d-flex">
+                                                <img src="~/Image/@item.Hinh1" height="60" width="60" alt="">
+                                            </div>
+                                            <div class="media-body">
+                                                <p>@item.Tensp</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <h5>
+                                            @*@gia.ToString("#,##0").Replace(',', '.')&#8363*@
+                                            @string.Format("{0:#,##0} VND", item.Gia * 10)
+                                        </h5>
+                                    </td>
+                                    <td>
+                                        @using (Html.BeginForm("UpdateCart", "GioHang", new { MaSP = item.Masp }))
+                                        {
+                                            <input style="width:40px" min="1" type="number" value="@item.SoLuong" name="SoLuong" class="input-text qty" />
+
+                                            <input type="submit" value="Cập nhật" />
+                                        }
+                                    </td>
+                                    <td>
+                                        @*<h5>@total.ToString("#,##0").Replace(',', '.')&#8363</h5>*@
+                                        @string.Format("{0:#,##0} VND", total * 10)
+                                    </td>
+                                    <td>
+                                        <a href=" @Url.Action("DeleteProduct", "GioHang", new { MaSP = item.Masp })"><i style="color:black" class="ti-close"></i></a>
+                                    </td>
+                                </tr>
+                            }
+                            <tr>
+                                <td></td>
+                                <td> </td>
+                                <td> </td>
+                                <td>
+                                    <h5>Tổng tiền</h5>
+                                </td>
+                                <td>
+                                    <h5>@ViewBag.TongTien.ToString("#,##0").Replace(',', '.') &#8363</h5>
+                                </td>
+
+                            </tr>
+
+                            <tr class="out_button_area">
+                                <td class="d-none-l"></td>
+                                <td class=""></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <div class="checkout_btn_inner d-flex align-items-center">
+                                        <a class="gray_btn" href="/SanPhams/Index">Tiếp tục mua hàng</a>
+                                        @if (Session["taikhoan"] != null)
+                                        {
+                                            @Html.ActionLink("Đặt hàng", "DatHang", null, new
+                                       {
+                                           @class = "primary-btn ml-2"
+                                       })
+                                        }
+                                        else if (Session["taikhoan"] == null)
+                                        {
+                                            @Html.ActionLink("Đặt hàng", "DatHang2", null, new { @class = "primary-btn ml-2" })
+                                        }
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                }
+                else
+                {
+                    <h3>Giỏ hàng rỗng ! xin mời tiếp tục mua hàng</h3>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
